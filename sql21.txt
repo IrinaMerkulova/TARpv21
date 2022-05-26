@@ -208,11 +208,12 @@ group by GenderId, City having sum(cast(Age as int)) > 15
 --- loome uued tabelid
 create table Department
 (
-Id int primary key,
+Id int primary key identity(1,1),
 DepartmentName nvarchar(50),
 Location nvarchar(50),
 DepartmentHead nvarchar(50)
 )
+*table Department on loodud
 
 create table Employees
 (
