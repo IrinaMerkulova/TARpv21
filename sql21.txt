@@ -1,6 +1,7 @@
 ﻿ülesanded tegi: Aleksandr Kastanie
 -- db loomine
 create database Tarpe21
+* andmebaas on loodud
 
 -- db kustutamine
 DRop DataBASE Tarpe21
