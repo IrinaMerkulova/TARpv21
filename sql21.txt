@@ -123,7 +123,7 @@ alter table Person
 add City nvarchar(25)
 --numerdatud select laused
 
--- 1. tahame tead k�iki, kes elavad Tartu linnas 
+-- 1. tahame tead kõiki, kes elavad Tartu linnas 
 select * from Person where City = 'Tartu'
 -- 2. kõik, kes ei ela Gothamis
 select * from Person where City <> 'Tartu'
@@ -131,41 +131,43 @@ select * from Person where City != 'Tartu'
 
 *select 1-2 on tehtud
 
--- n�itab teatud vanusega inimesi
+-- 3. näitab teatud vanusega inimesi
 select *from Person where Age = 100 or 
 Age = 50 or Age = 20
 select * from Person where Age in (100, 50, 20)
 
---- n�itab teatud vanusevahemikus olevaid inimesi
+--- 4. näitab teatud vanusevahemikus olevaid inimesi
 select * from Person where Age between 30 and 50
 
---- wildcard e n�itab k�ik g-t�hega linnad
+** select 3-4 on tehtud
+
+--- 5. wildcard e näitab kõik g-tähega linnad
 select * from Person where City like 'n%'
 select * from Person where Email like '%@%'
 
--- n'itab k�iki, kellel ei ole @-m�rki emailis
+-- 6. n'itab k�iki, kellel ei ole @-märki emailis
 select * from Person where Email not like '%@%'
 
---- n�itab, kelle on emailis ees ja peale @-m�rki
--- ainult �ks t�ht
+--- 7. näitab, kelle on emailis ees ja peale @-märki
+-- ainult üks täht
 select * from Person where Email like '_@_.com'
 
---- k�ik, kellel ei ole nimes esimene t�ht W, A ja S
+--- 8. kõik, kellel ei ole nimes esimene täht W, A ja S
 select * from Person where Name like '[^WAS]%'
 
---- kes elavad Gothamis ja New Yorkis
+--- 9. kes elavad Gothamis ja New Yorkis
 select * from Person where (City = 'Gotham' or City = 'New York')
 
---- k�ik, kes elevad v�lja toodud linnades ja on vanemad kui 40 a
+--- 10. kõik, kes elevad välja toodud linnades ja on vanemad kui 40 a
 select * from Person where (City = 'Gotham' or City = 'New York')
 and Age >= 40
 
--- kuvab t�hestikulises j�rjekorras inimesi ja v�tab aluseks Name veeru
+-- 11. kuvab tähestikulises järjekorras inimesi ja võtab aluseks Name veeru
 select * from Person order by Name
---- kuva vastupidises j�rjestuses
+--- 12. kuva vastupidises järjestuses
 select * from Person order by Name desc
 
----v�tab kolm esimest rida
+--- 13. võtab kolm esimest rida
 select top 3 * from Person
 
 --- kolm esimest, aga tabeli j�rjestus on Age ja siis Name
