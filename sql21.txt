@@ -784,6 +784,7 @@ select * from DateTime
 
 -- konkreetse masina kellaaeg
 select getdate(), 'GETDATE()'
+*ajavaade on tehtud
 
 insert into DateTime
 values (getdate(), getdate(), getdate(), getdate(), getdate(), getdate())
