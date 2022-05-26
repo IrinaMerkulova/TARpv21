@@ -187,8 +187,8 @@ select min(cast(Age as int)) from Person
 *select 17 on tehtud
 --- 18. kõige vanem isik
 select max(cast(Age as int)) from Person
-
 select City, sum(cast(Age as int)) as TotalAge from Person group by City
+*select 18 on tehtud
 
 --- 19. kuidas saab koodiga muuta andmetüüpi ja selle pikkust
 alter table Person
