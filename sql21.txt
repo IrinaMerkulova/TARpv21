@@ -125,6 +125,7 @@ select * from Person where Age in (100, 50, 20)
 
 --- 4. näitab teatud vanusevahemikus olevaid inimesi
 select * from Person where Age between 30 and 50
+*Select 4 on tehtud
 
 --- 5. wildcard e näitab kõik g-tähega linnad
 select * from Person where City like 'n%'
@@ -176,21 +177,21 @@ select max(cast(Age as int)) from Person
 
 select City, sum(cast(Age as int)) as TotalAge from Person group by City
 
---- 19. kuidas saab koodiga muuta andmet��pi ja selle pikkust
+--- 19. kuidas saab koodiga muuta andmetüüpi ja selle pikkust
 alter table Person
 alter column Name nvarchar(30)
 
--- 20. kuvab esimeses reas v�lja toodud j�rjestuses 
+-- 20. kuvab esimeses reas välja toodud järjestuses - отображает суммарный возраст в каждом городе и сортирует по GenderId
 -- ning muudab Age-i TotalAges-ks
--- j�rjestab City-s olevate nimede j�rgi ning alles siis GenderId j�rgi
+-- järjestab City-s olevate nimede järgi ning alles siis GenderId järgi
 select City, GenderId, Sum(cast(Age as int)) as TotalAge from Person
 group by City, GenderId order by City
 
---- 21. n�itab, et mitu rida on selles tabelis
+--- 21. näitab, et mitu rida on selles tabelis - покажет сколько строк/записей в таблице
 select count(*) from Person
 
---- 22. n�itab tulemust, et mitu inimest on GenderId v��rtusega 2 konkreetses linnas
---- arvutab vanuse kokku konkreetses linnas 
+--- 22. näitab tulemust, et mitu inimest on GenderId väärtusega 2 konkreetses linnas - сколько человек с GenderId = 2 в конкретном городе
+--- arvutab vanuse kokku konkreetses linnas - и найдет суммарный возраст
 select GenderId, City, sum(cast(Age as int)) as TotalAge, count(Id) as [Total Person(s)]
 from Person
 where GenderId = '2'
