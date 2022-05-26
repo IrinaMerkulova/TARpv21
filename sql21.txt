@@ -519,7 +519,8 @@ where Id = 10
 
 * lisatud veerud - lastname ja middle name ning täidetud ka.
 
---- igast reast v�tab esimeses veerus t�idetud lahtri ja kuvab ainult seda
+--- igast reast võtab esimeses veerus täidetud lahtri ja kuvab ainult seda
+* coalesce - функция которая возвращает не нулевое значение первого FirstName столбца
 select Id, coalesce(FirstName, MiddleName, LastName) as Name
 from Employees
 
