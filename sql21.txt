@@ -162,13 +162,14 @@ select top 3 * from Person
 select * from Person
 select top 3 Age, Name from Person
 *select laused 13-14 on tehtud
+
 ---15 näitab esimesed 50% tabelis
 select top 50 percent * from Person
 
 --16 järjestab vanuse järgi isikud
 select * from Person order by cast(Age as int)
 select * from Person order by Age
-
+select laused 15-16 on tehtud 
 --17 kõikide isikute koondvanus
 select sum(cast(Age as int)) from Person
 
