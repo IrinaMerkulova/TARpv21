@@ -1,3 +1,4 @@
+ülesanded tegi Irina Merkulova
 -- db loomine
 create database Tarpe21
 
