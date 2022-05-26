@@ -1,6 +1,7 @@
 ﻿Ülesanded tegi German Vassiljev
 -- db loomine
-create database Tarpe21
+create database Tarpv21
+*andmebaas on loodud
 
 -- db kustutamine
 DRop DataBASE Tarpe21
