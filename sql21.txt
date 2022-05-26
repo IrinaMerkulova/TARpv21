@@ -177,6 +177,7 @@ select sum(cast(Age as int)) from Person
 ---18 kuvab kõige nooremat isikut
 select min(cast(Age as int)) from Person
 select laused 17-18 on tehtud 
+
 ---19. kõige vanem isik
 select max(cast(Age as int)) from Person
 
@@ -185,6 +186,7 @@ select City, sum(cast(Age as int)) as TotalAge from Person group by City
 ---20 kuidas saab koodiga muuta andmetüüpi ja selle pikkust
 alter table Person
 alter column Name nvarchar(30)
+select laused 19-20 on tehtud
 
 -- 21kuvab esimeses reas välja toodud järjestuses 
 -- ning muudab Age-i TotalAges-ks
