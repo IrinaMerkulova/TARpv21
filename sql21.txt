@@ -56,21 +56,19 @@ values ('Spiderman', 'spider@spiderman.com', 2)
 select * from Person
 *andmed tabeli Person on lisatud
 
--- vaatame tabeli andmeid
-select * from Person
-
---- v��rv�tme piirangu maha v�tmine
+--- võõrvõtme piirangu maha võtmine
 alter table Person
 drop constraint tblPerson_GenderId_FK
 
--- sisestame v��rtuse tabelisse
-insert into Gender (Id, Gender)
-values (3, 'Unknown')
--- lisame v��rv�tme uuesti
+
+-- sisestame väärtuse tabelisse
+insert into Gender (Gender)
+values ('Unknown')
+-- lisame võõrvõtme uuesti
 alter table Person
 add constraint DF_Person_GenderId
 default 3 for GenderId
-
+*foreign key kustatamine ja uuesti lisamine
 
 ---- 2 tund
 
