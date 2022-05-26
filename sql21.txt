@@ -66,8 +66,8 @@ alter table Person
 drop constraint tblPerson_GenderId_FK
 
 -- sisestame v��rtuse tabelisse
-insert into Gender (Id, Gender)
-values (3, 'Unknown')
+insert into Gender (Gender)
+values ('Unknown')
 -- lisame v��rv�tme uuesti
 alter table Person
 add constraint DF_Person_GenderId
@@ -76,7 +76,7 @@ default 3 for GenderId
 
 
 
----- 2 tund
+---- 2 tund - select laused 
 
 select * from Person
 select * from Gender
@@ -92,6 +92,7 @@ add Age nvarchar(10)
 update Person
 set Age = 149
 where Id = 8
+*uus verg ja vanus on lisatud
 
 -- veerule piirnagu panemine
 alter table Person
