@@ -150,7 +150,7 @@ select * from Person where Email like '_@_.com'
 select * from Person where Name like '[^WAS]%'
 
 ---8. kes elavad Gothamis ja New Yorkis
-select * from Person where (City = 'Gotham' or City = 'New York')
+select * from Person where (City = 'Tallinn' or City = 'Narva')
 
 ---9. kõik, kes elevad välja toodud linnades ja on vanemad kui 40 a
 select * from Person where (City = 'Gotham' or City = 'New York')
