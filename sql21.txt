@@ -523,17 +523,19 @@ union all
 select Id, Name, Email from UKCustomers
 order by Name
 
---- loome stored procedure, mis kuvab vaate
+*PROTSEDUURID*
+--- loome stored procedure, mis kuvab vaate - kaks veergu: FirstName, Gender
 create procedure spGetEmployees
 as begin
 	select FirstName, Gender from Employees
 end
 
+*Protseduuride käivitamine
 spGetEmployees
 exec spGetEmployees
 execute spGetEmployees
 
---- 
+--- protseduur, mis näitab FirstName, Gender, DepartmentId kasutaja poolt sisestatud andmetega
 create proc spGetEmployeesByGenderAndDepartment
 @Gender nvarchar(20),
 @DepartmentId int
