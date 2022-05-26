@@ -494,7 +494,7 @@ where Id = 9
 update Employees set FirstName = NULL, MiddleName = NULL, LastName = 'Crowe'
 where Id = 10
 *lisatud veerud - last name ja middlename ning täidetud ka.
-
+* coalesce - функция, которая возвращает нулевое значения первого столбца
 --- igast reast v�tab esimeses veerus t�idetud lahtri ja kuvab ainult seda
 select Id, coalesce(FirstName, MiddleName, LastName) as Name
 from Employees
