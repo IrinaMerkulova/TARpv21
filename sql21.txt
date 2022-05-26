@@ -230,6 +230,8 @@ from Person
 where GenderId = '2'
 group by GenderId, City
 
+*select 21-22 on tehtud
+
 --- tund 3
 
 --- n'itab 'ra, et mitu inimest on vanemad, kui 41 ja kui palju igas linnas neid elab
