@@ -206,6 +206,7 @@ select GenderId, City, sum(cast(Age as int)) as TotalAge, count(Id) as [Total Pe
 from Person
 where GenderId = '2'
 group by GenderId, City
+select laused 21-23 on tehtud
 
 --- tund 3
 
