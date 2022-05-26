@@ -147,6 +147,7 @@ select * from Person where Name like '[^WAS]%'
 
 --- 9. kes elavad Gothamis ja New Yorkis
 select * from Person where (City = 'Gotham' or City = 'New York')
+*select 9 on tehtud
 
 --- 10. kõik, kes elevad välja toodud linnades ja on vanemad kui 40 a
 select * from Person where (City = 'Gotham' or City = 'New York')
