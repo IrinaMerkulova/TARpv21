@@ -504,10 +504,12 @@ update Employees set FirstName = 'James', MiddleName = '007', LastName = 'Bond'
 where Id = 9
 update Employees set FirstName = NULL, MiddleName = NULL, LastName = 'Crowe'
 where Id = 10
-*lisatud koik
 
+*lisatud veerud - last name ja middlename ning täidetud ka.
+
+*coalesce - функция которая возращает что-то, мне не дали записать
 --- igast reast v�tab esimeses veerus t�idetud lahtri ja kuvab ainult seda
-select Id, coalesce(FirstName, MiddleName, LastName) as Name
+select Id, coalesce(MiddleName, LastName, FirstName) as Name
 from Employees
 
 select * from Employees
