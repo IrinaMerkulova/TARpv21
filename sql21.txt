@@ -1,3 +1,4 @@
+﻿ülesanded tegi Edgar Neverovski
 -- db loomine
 create database Tarpe21
 
