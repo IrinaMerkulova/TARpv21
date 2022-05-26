@@ -841,18 +841,18 @@ select * from EmployeesWithDates
 
 **kirjete lisamine tabelisse EmployeesWithDates
 
--- kuidas v�tame �hest koolonist andmed ja selle abil loome uued koolonid
+-- kuidas võtame ühest koolonist andmed ja selle abil loome uued koolonid
 select  Name, DateOfBirth, DateName(weekday, DateOfBirth) as [Day],
---- v�tab DateOfBirth koolonist p�eva j�rgi ja kuvab p�eva nimetuse
+--- võtab DateOfBirth koolonist päeva järgi ja kuvab päeva nimetuse
 	Month(DateOfBirth) as MonthNumber,
---- v�tab DoB koolonist kuup�eva ja n�itab nr
+--- võtab DoB koolonist kuupäeva ja näitab nr
 	Datename(Month, DateOfBirth) as [MonthName],
---- v�tab DoB koolonist kuu ja kuvab t�htedega
+--- võtab DoB koolonist kuu ja kuvab tähtedega
 	Year(DateOfBirth) as [Year]
---- v�tab aasta koolonist aasta ja kuvab aasta nr
+--- võtab aasta koolonist aasta ja kuvab aasta nr
 from EmployeesWithDates
 
-
+**select for EmployeesWithDates
 --- 
 select datepart(weekday, '2022-04-16 12:02:36.260')
 select  datename(month, '2022-04-16 12:02:36.260') -- anna kuu nimetuse
