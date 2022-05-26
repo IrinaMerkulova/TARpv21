@@ -763,8 +763,9 @@ select FirstName, LastName, Email,
 	stuff(Email, 2, 3, '*****') as StuffedEmail
 from Employees
 
-
+*DATETIME*
 --- datetime
+---создание таблицы
 create table DateTime
 (
 c_time time,
@@ -777,7 +778,7 @@ c_datetimeoffset datetimeoffset
 
 select * from DateTime
 
--- konkreetse masina kellaaeg
+-- konkreetse masina kellaaeg//уточняет нынешнее время
 select getdate(), 'GETDATE()'
 
 insert into DateTime
@@ -809,6 +810,7 @@ select datename(weekday, '2022-04-18 13:30:55.866')  -- annab vastuseks esmasp�
 select datename(month, '2022-04-18 13:30:55.866')  --- annab vastuseks Aprill
 
 ---
+---Создание таблицы сотрудники и даты
 create table EmployeesWithDates
 (
 Id nvarchar(2),
