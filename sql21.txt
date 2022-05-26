@@ -1,3 +1,4 @@
+﻿ülesanded tegi Artur Link
 -- db loomine
 create database Tarpe21
 
