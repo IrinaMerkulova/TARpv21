@@ -1,5 +1,6 @@
+﻿ulesannded tegi Ilja Trunov
 -- db loomine
-create database Tarpe21
+create database TARpv21
 
 -- db kustutamine
 DRop DataBASE Tarpe21
