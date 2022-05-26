@@ -490,6 +490,7 @@ where Id = 9
 update Employees set FirstName = NULL, MiddleName = NULL, LastName = 'Crowe'
 where Id = 10
 
+* lisatud veerud - lastname ja middleName ning täidetud ka.
 
 --- igast reast v�tab esimeses veerus t�idetud lahtri ja kuvab ainult seda
 select Id, coalesce(FirstName, MiddleName, LastName) as Name
