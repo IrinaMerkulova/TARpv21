@@ -160,11 +160,13 @@ select * from Person where Name like '[^WAS]%'
 *select 7-8 on tehtud
 
 --- 9. kes elavad Gothamis ja New Yorkis
-select * from Person where (City = 'Gotham' or City = 'New York')
+select * from Person where (City = 'Tartu' or City = 'Tallinn')
 
 --- 10. kõik, kes elevad välja toodud linnades ja on vanemad kui 40 a
-select * from Person where (City = 'Gotham' or City = 'New York')
+select * from Person where (City = 'Tartu' or City = 'Tallinn')
 and Age >= 40
+
+*select 9-10 on tehtud
 
 -- 11. kuvab tähestikulises järjekorras inimesi ja võtab aluseks Name veeru
 select * from Person order by Name
