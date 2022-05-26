@@ -238,6 +238,8 @@ group by City, GenderId order by City
 --- покажет сколько рядов или  записей	 в таблице 
 select count(*) from Person
 
+*Select 21 on tehtud 
+
 ---22. näitab tulemust, et mitu inimest on GenderId väärtusega 2 konkreetses linnas
 --- arvutab vanuse kokku konkreetses linnas 
 --- покажет результат сколько человек с GenderID = 2 в конкретном городе и найдет их суммарный возвраст 
@@ -245,6 +247,8 @@ select GenderId, City, sum(cast(Age as int)) as TotalAge, count(Id) as [Total Pe
 from Person
 where GenderId = '2'
 group by GenderId, City
+
+*Select 22 on tehtud 
 
 --- tund 3
 
