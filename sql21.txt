@@ -145,11 +145,11 @@ select * from Person where Email like '_@_.com'
 --- 8. kõik, kellel ei ole nimes esimene täht W, A ja S
 select * from Person where Name like '[^WAS]%'
 
---- 9. kes elavad Gothamis ja New Yorkis
-select * from Person where (City = 'Gotham' or City = 'New York')
+--- 9. kes elavad Tallinn ja Narva
+select * from Person where (City = 'Tallinn' or City = 'Narva')
 
 --- 10. kõik, kes elevad välja toodud linnades ja on vanemad kui 40 a
-select * from Person where (City = 'Gotham' or City = 'New York')
+select * from Person where (City = 'Tallinn' or City = 'Narva')
 and Age >= 40
 
 -- 11. kuvab tõhestikulises järjekorras inimesi ja võtab aluseks Name veeru
@@ -188,18 +188,24 @@ alter column Name nvarchar(30)
 -- 20. kuvab esimeses reas välja toodud järjestuses 
 -- ning muudab Age-i TotalAges-ks
 -- järjestab City-s olevate nimede järgi ning alles siis GenderId järgi
+---отображет суммарное кол-во возраста в каждом городе и упорядочивает по GenderId.
 select City, GenderId, Sum(cast(Age as int)) as TotalAge from Person
 group by City, GenderId order by City
 
 --- 21. näitab, et mitu rida on selles tabelis
+--- показывает, сколько строк или записей в таблице
 select count(*) from Person
 
 --- 22. näitab tulemust, et mitu inimest on GenderId väärtusega 2 konkreetses linnas
---- arvutab vanuse kokku konkreetses linnas 
+--- arvutab vanuse kokku konkreetses linnas
+--- покажет результат, сколько человек с GenderId=2 в конкретном городе и найдет их суммарный возраст.
 select GenderId, City, sum(cast(Age as int)) as TotalAge, count(Id) as [Total Person(s)]
 from Person
 where GenderId = '2'
 group by GenderId, City
+
+
+***andmete uuendamine
 
 --- tund 3
 
