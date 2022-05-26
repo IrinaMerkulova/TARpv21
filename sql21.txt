@@ -71,7 +71,7 @@ add constraint DF_Person_GenderId
 default 3 for GenderId
 
 *foreign key kustatamine ja uues lisamine
----- 2 tund
+---- 2 tund - select laused
 
 select * from Person
 select * from Gender
@@ -87,6 +87,7 @@ add Age nvarchar(10)
 update Person
 set Age = 149
 where Id = 8
+*uus veerg Age/ vanus on liisatud
 
 -- veerule piirnagu panemine
 alter table Person
