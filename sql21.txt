@@ -10,7 +10,7 @@ DRop DataBASE Tarpe21
 use tarpv21;
 create table Gender
 (
-Id int NOT NULL identity(1,1),
+Id int NOT NULL primary key identity(1,1),
 Gender nvarchar(10) not null
 )
 *tabel gender on loodud
@@ -39,20 +39,21 @@ foreign key (GenderId) references Gender(Id)
 *foreign key on looodud
 
 -- sisestame andmed
-insert into Person (Id, Name, Email, GenderId)
-values (1, 'Supermees', 's@s.com', 2)
-insert into Person (Id, Name, Email, GenderId)
-values (2, 'Wonderwoman', 'w@w.com', 1)
-insert into Person (Id, Name, Email, GenderId)
-values (3, 'Batman', 'b@b.com', 2)
-insert into Person (Id, Name, Email, GenderId)
-values (4, 'Aquaman', 'a@a.com', 2)
-insert into Person (Id, Name, Email, GenderId)
-values (5, 'Catwoman', 'c@c.com', 1)
-insert into Person (Id, Name, Email, GenderId)
-values (6, 'Antman', 'ant"ant.com', 2)
-insert into Person (Id, Name, Email, GenderId)
-values (7, 'Spiderman', 'spider@spiderman.com', 2)
+insert into Person (Name, Email, GenderId)
+values ('Supermees', 's@s.com', 2)
+insert into Person (Name, Email, GenderId)
+values ('Wonderwoman', 'w@w.com', 1)
+insert into Person (Name, Email, GenderId)
+values ('Batman', 'b@b.com', 2)
+insert into Person (Name, Email, GenderId)
+values ('Aquaman', 'a@a.com', 2)
+insert into Person (Name, Email, GenderId)
+values ('Catwoman', 'c@c.com', 1)
+insert into Person (Name, Email, GenderId)
+values ('Antman', 'ant"ant.com', 2)
+insert into Person (Name, Email, GenderId)
+values ('Spiderman', 'spider@spiderman.com', 2)
+*andme tabeli Person on liisatud
 
 -- vaatame tabeli andmeid
 select * from Person
@@ -61,15 +62,15 @@ select * from Person
 alter table Person
 drop constraint tblPerson_GenderId_FK
 
--- sisestame v��rtuse tabelisse
-insert into Gender (Id, Gender)
-values (3, 'Unknown')
--- lisame v��rv�tme uuesti
+-- sisestame väärtuse tabelisse
+insert into Gender (Gender)
+values ('Unknown')
+-- lisame võõrvõtme uuesti
 alter table Person
 add constraint DF_Person_GenderId
 default 3 for GenderId
 
-
+*foreign key kustatamine ja uues lisamine
 ---- 2 tund
 
 select * from Person
