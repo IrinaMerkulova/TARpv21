@@ -143,7 +143,7 @@ select * from Person where (City = 'Gotham' or City = 'New York')
 
 --- k�ik, kes elevad v�lja toodud linnades ja on vanemad kui 40 a
 select * from Person where (City = 'Gotham' or City = 'New York')
-and Age >= 40
+and Age >= 20
 
 -- kuvab t�hestikulises j�rjekorras inimesi ja v�tab aluseks Name veeru
 select * from Person order by Name
@@ -177,18 +177,22 @@ select City, sum(cast(Age as int)) as TotalAge from Person group by City
 --- kuidas saab koodiga muuta andmet��pi ja selle pikkust
 alter table Person
 alter column Name nvarchar(30)
+*alter table Name
 
 -- kuvab esimeses reas v�lja toodud j�rjestuses 
 -- ning muudab Age-i TotalAges-ks
 -- j�rjestab City-s olevate nimede j�rgi ning alles siis GenderId j�rgi
+---отображает суммарный возраст в каждом городе и упорядочивает по GenderID
 select City, GenderId, Sum(cast(Age as int)) as TotalAge from Person
 group by City, GenderId order by City
 
 --- n�itab, et mitu rida on selles tabelis
+---покажет сколько строк/записей в таблице 
 select count(*) from Person
 
 --- n�itab tulemust, et mitu inimest on GenderId v��rtusega 2 konkreetses linnas
 --- arvutab vanuse kokku konkreetses linnas 
+---в конкертном городе и найдет их суммарный возраст
 select GenderId, City, sum(cast(Age as int)) as TotalAge, count(Id) as [Total Person(s)]
 from Person
 where GenderId = '2'
