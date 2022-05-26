@@ -556,6 +556,9 @@ union all
 select Id, Name, Email from UKCustomers
 order by Name
 
+
+--PROTSEEDURID--
+
 --- loome stored procedure, mis kuvab vaate
 create procedure spGetEmployees
 as begin
@@ -565,8 +568,10 @@ end
 spGetEmployees
 exec spGetEmployees
 execute spGetEmployees
+*tehtud
 
---- 
+--- näitab firstname, gender, departamentid kasutaja poolt sisestatud andmetega @gender, @departamentid 
+
 create proc spGetEmployeesByGenderAndDepartment
 @Gender nvarchar(20),
 @DepartmentId int
@@ -574,6 +579,7 @@ as begin
 	select FirstName, Gender, DepartmentId from Employees where Gender = @Gender
 	and DepartmentId = @DepartmentId
 end
+*tehtud
 
 --- k�ik esimeses osakonnas meessoost t��tavad isikud
 spGetEmployeesByGenderAndDepartment 'Male', 1
