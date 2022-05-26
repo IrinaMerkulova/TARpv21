@@ -1,7 +1,7 @@
 ﻿Ülesanded tegi Mihhail Lastovski
 -- db loomine
-create database Tarpe21
-
+create database Tarpv21
+*Andmebaas on loodud
 -- db kustutamine
 DRop DataBASE Tarpe21
 
