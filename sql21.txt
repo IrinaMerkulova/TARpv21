@@ -278,6 +278,7 @@ insert into Employees (Name, Gender, Salary, DepartmentId)
 values ('Russell', 'Male', 8800, NULL)
 
 select * from Employees
+
 *andmed tabelisse on liisanud
 
 --- saan ainult selles tabelis olevad veerud
@@ -501,7 +502,9 @@ where Id = 9
 update Employees set FirstName = NULL, MiddleName = NULL, LastName = 'Crowe'
 where Id = 10
 
+*lisatud veerud - lastname ja middle name ning täidetud ka.
 
+*coalesce - функция
 --- igast reast v�tab esimeses veerus t�idetud lahtri ja kuvab ainult seda
 select Id, coalesce(FirstName, MiddleName, LastName) as Name
 from Employees
