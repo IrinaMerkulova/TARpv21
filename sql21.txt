@@ -794,9 +794,11 @@ values (getdate(), getdate(), getdate(), getdate(), getdate(), getdate())
 update DateTime set c_datetimeoffset = '2022-04-18 13:30:55.8666667 +10:00'
 where c_datetimeoffset = '2022-04-18 13:30:55.8666667 +00:00'
 
-select CURRENT_TIMESTAMP, 'CURRENT_TIMESTAMP' --- aja p�ring
-select SYSDATETIME(), 'SYSDATETIME' --- veel t�psem aja p�ring
-select SYSDATETIMEOFFSET(), 'SYSDATETIMEOFFSET' -- t�pne aeg koos ajalise nihkega UTC suhtes
+** lisaväärtusi
+
+select CURRENT_TIMESTAMP, 'CURRENT_TIMESTAMP' --- aja päring
+select SYSDATETIME(), 'SYSDATETIME' --- veel täpsem aja päring
+select SYSDATETIMEOFFSET(), 'SYSDATETIMEOFFSET' -- täpne aeg koos ajalise nihkega UTC suhtes
 select GETUTCDATE(), 'GETUTCDATE' --- UTC aeg
 
 -- kui 0, siis on vale. Kui 1, siis on OK
