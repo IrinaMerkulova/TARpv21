@@ -103,15 +103,19 @@ delete from Person where Id = 8
 go
 select * from Person
 *8 rida on kustuta
+
 --- lisame veeru juurde
 alter table Person
 add City nvarchar(25)
 
--- tahame tead k�iki, kes elavad Gothami linnas 
+--- Numerdatud Select laused
+
+-- 1. tahame tead kõiki, kes elavad Gothami linnas 
 select * from Person where City = 'Gotham'
--- k�ik, kes ei ela Gothamis
+-- 2. kõik, kes ei ela Gothamis
 select * from Person where City <> 'Gotham'
 select * from Person where City != 'Gotham'
+*Select 1-2 on tehtud
 
 -- n�itab teatud vanusega inimesi
 select *from Person where Age = 100 or 
