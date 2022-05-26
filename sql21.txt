@@ -580,7 +580,7 @@ as begin
 	and DepartmentId = @DepartmentId
 end
 
-
+--- показывает колличество сотрудников по введенному полу
 create proc spGetEmployeeCountByGender
 @Gender nvarchar(20),
 @EmployeeCount int output
@@ -596,12 +596,12 @@ if(@TotalCount = 0)
 else
 	print '@TotalCount is not null'
 print @TotalCount
-
 -- annab teada, palju on meessoost isikuid
 declare @TotalCount int
 exec spGetEmployeeCountByGender @EmployeeCount = @TotalCount out, @Gender = 'Male'
 print @TotalCount
 
+* protseduur3 on tehtud
 --- sp s�ltuvuse vaatamine
 sp_depends spGetEmployeeCountByGender
 --- sp sisu vaatamine
