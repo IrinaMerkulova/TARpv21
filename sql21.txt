@@ -1,3 +1,4 @@
+﻿Ülesanded tegi German Vassiljev
 -- db loomine
 create database Tarpe21
 
