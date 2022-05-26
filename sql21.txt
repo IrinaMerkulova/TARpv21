@@ -173,6 +173,8 @@ select * from Person order by Name
 --- 12. kuva vastupidises järjestuses
 select * from Person order by Name desc
 
+*select 11-12 on tehtud
+
 --- 13. võtab kolm esimest rida
 select top 3 * from Person
 
