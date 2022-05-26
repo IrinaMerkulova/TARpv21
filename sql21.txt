@@ -1,10 +1,10 @@
 ﻿ülesanded tegi Artjom Rozhkov
 -- db loomine
-create database Tarpe21
+create database TARpv21
 *andmebaas on loodud
 
 -- db kustutamine
-DRop DataBASE Tarpe21
+DRop DataBASE TARpv21
 
 --- teeme tabeli
 create table Gender
