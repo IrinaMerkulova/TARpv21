@@ -492,7 +492,9 @@ where Id = 10
 
 * lisatud veerud - lastname ja middleName ning täidetud ka.
 
---- igast reast v�tab esimeses veerus t�idetud lahtri ja kuvab ainult seda
+
+*coalesce - функцияб которая возвращает ненулевое значение первого FirstName столбца
+--- igast reast võtab esimeses veerus t�idetud lahtri ja kuvab ainult seda
 select Id, coalesce(FirstName, MiddleName, LastName) as Name
 from Employees
 
@@ -540,17 +542,19 @@ union all
 select Id, Name, Email from UKCustomers
 order by Name
 
---- loome stored procedure, mis kuvab vaate
+*PROTSEDUURID*
+--- loome stored procedure, mis kuvab vaate - kaks veergu FirstName, Gender 
 create procedure spGetEmployees
 as begin
 	select FirstName, Gender from Employees
 end
-
+--- protseduuri käivitamine
 spGetEmployees
 exec spGetEmployees
 execute spGetEmployees
 
---- 
+--- protseduur, mis näitab FirstName, Gender, DepartmentId 
+kasutaja poolt sisestatud andmetega @Gender, @Department 
 create proc spGetEmployeesByGenderAndDepartment
 @Gender nvarchar(20),
 @DepartmentId int
