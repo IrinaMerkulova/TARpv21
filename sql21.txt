@@ -151,19 +151,24 @@ select * from Person where Email like '_@_.com'
 
 *näitab esimest ja viimast tähte
 
----8. kõik, kellel ei ole nimes esimene t�ht W, A ja S
+---8. kõik, kellel ei ole nimes esimene täht W, A ja S
 select * from Person where Name like '[^WAS]%'
 
+*select laused on tehtud
+
 ---9. kes elavad Gothamis ja New Yorkis
-select * from Person where (City = 'Gotham' or City = 'New York')
+select * from Person where (City = 'Tallinn' or City = 'Maardu')
 
 ---10. kõik, kes elevad v�lja toodud linnades ja on vanemad kui 40 a
-select * from Person where (City = 'Gotham' or City = 'New York')
+select * from Person where (City = 'Tallinn' or City = 'Maardu')
 and Age >= 40
 
--- kuvab t�hestikulises j�rjekorras inimesi ja v�tab aluseks Name veeru
+-- 11. kuvab t�hestikulises j�rjekorras inimesi ja v�tab aluseks Name veeru
 select * from Person order by Name
---- kuva vastupidises j�rjestuses
+
+* select 9-11 laused on tehtud 
+
+---12. kuva vastupidises j�rjestuses
 select * from Person order by Name desc
 
 ---v�tab kolm esimest rida
