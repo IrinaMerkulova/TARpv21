@@ -1,3 +1,4 @@
+﻿ülesanded tegi Denis Saiko
 -- db loomine
 create database Tarpe21
 
