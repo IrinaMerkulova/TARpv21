@@ -217,12 +217,13 @@ DepartmentHead nvarchar(50)
 
 create table Employees
 (
-Id int primary key,
+Id int primary key identity(1,1),
 Name nvarchar(50),
 Gender nvarchar(10),
 Salary nvarchar(50),
 DepartmentId int
 )
+*tabel empoyees on loodud
 
 ---sisestame andmed
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
