@@ -1,6 +1,7 @@
 ﻿ülesanded tegi Artur Link
 -- db loomine
 create database Tarpe21
+*andmebaas on loodud
 
 -- db kustutamine
 DRop DataBASE Tarpe21
