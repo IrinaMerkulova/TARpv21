@@ -588,17 +588,17 @@ order by Name
 
 *PROTSEDUURID*
 
---- loome stored procedure, mis kuvab vaate
+--- loome stored procedure, mis kuvab vaate - kaks veergu : FirstName, Gender
 create procedure spGetEmployees
 as begin
 	select FirstName, Gender from Employees
 end
-
+--- protseduuri käivitamine 
 spGetEmployees
 exec spGetEmployees
 execute spGetEmployees
 
---- 
+---  protsedure, mis näitab FirstName, Gender, DepartmentId kasutaja poolt sisestatud and andmetega 
 create proc spGetEmployeesByGenderAndDepartment
 @Gender nvarchar(20),
 @DepartmentId int
