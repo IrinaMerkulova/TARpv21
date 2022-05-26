@@ -29,10 +29,11 @@ values ('Female')
 insert into Gender (Gender)
 values ('Male')
 *data added in tabel Gender
---- n��d saab kasutada ainult Gender tabelis olevaid v��rtuseid
+--- nüüd saab kasutada ainult Gender tabelis olevaid väärtuseid
+---foreign key addition
 alter table Person add constraint tblPerson_GenderId_FK
 foreign key (GenderId) references Gender(Id)
-
+*foreign key added on table peson
 -- sisestame andmed
 insert into Person (Id, Name, Email, GenderId)
 values (1, 'Supermees', 's@s.com', 2)
