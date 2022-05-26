@@ -839,6 +839,8 @@ values (4, 'Sara', '1979-11-26 12:59:30.670')
 
 select * from EmployeesWithDates
 
+**kirjete lisamine tabelisse EmployeesWithDates
+
 -- kuidas v�tame �hest koolonist andmed ja selle abil loome uued koolonid
 select  Name, DateOfBirth, DateName(weekday, DateOfBirth) as [Day],
 --- v�tab DateOfBirth koolonist p�eva j�rgi ja kuvab p�eva nimetuse
