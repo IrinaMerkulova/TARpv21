@@ -15,13 +15,15 @@ Gender nvarchar(10) not null
 )
 *tabel gender on loodud
 
+use TARpv21;
 create table Person
 (
-Id int not null primary key,
+Id int not null primary key identity(1,1),
 Name nvarchar(25),
 Email nvarchar(30),
 GenderId int
 )
+*tabel person on loodud
 
 --- andmete sisestamine tabelisse
 insert into Gender (Id, Gender)
