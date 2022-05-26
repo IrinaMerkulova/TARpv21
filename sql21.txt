@@ -792,6 +792,7 @@ select getdate(), 'GETDATE()'
 
 insert into DateTime
 values (getdate(), getdate(), getdate(), getdate(), getdate(), getdate())
+*Andmed tabeli DateTime on lisatud
 
 update DateTime set c_datetimeoffset = '2022-04-18 13:30:55.8666667 +10:00'
 where c_datetimeoffset = '2022-04-18 13:30:55.8666667 +00:00'
