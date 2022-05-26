@@ -82,6 +82,7 @@ values ('Test', 'Test')
 ---lisame uue veeru tabelisse
 alter table Person
 add Age nvarchar(10)
+*add table Age
 
 --uuendame andmeid
 update Person
