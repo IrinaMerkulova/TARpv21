@@ -175,6 +175,7 @@ select top 50 percent * from Person
 -- 15.järjestab vanuse järgi isikud
 select * from Person order by cast(Age as int)
 select * from Person order by Age
+*select 15 on tehtud
 
 -- 16kõikide isikute koondvanus
 select sum(cast(Age as int)) from Person
