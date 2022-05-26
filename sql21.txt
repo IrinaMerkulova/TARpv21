@@ -1,6 +1,7 @@
 ﻿ülesanded tegi Artjom Volkov
 -- db loomine
-create database Tarpe21
+create database TARpv21
+*andmebaas on loodud  / база данных создана
 
 -- db kustutamine
 DRop DataBASE Tarpe21
