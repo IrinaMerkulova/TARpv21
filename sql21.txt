@@ -565,7 +565,7 @@ spGetEmployees
 exec spGetEmployees
 execute spGetEmployees
 
---- protseduur, mis näitab FirstName, Gender, DepartmentId kasutaja pooolt sisestatud andmetega
+--- protseduur, mis näitab FirstName, Gender, DepartmentId kasutaja pooolt sisestatud andmetega, @Gender, @DepartmentId 
 create proc spGetEmployeesByGenderAndDepartment
 @Gender nvarchar(20),
 @DepartmentId int
@@ -591,7 +591,7 @@ as begin
 	and DepartmentId = @DepartmentId
 end
 
-
+--- показывает колличество сотрудников по введенному полу
 create proc spGetEmployeeCountByGender
 @Gender nvarchar(20),
 @EmployeeCount int output
@@ -599,6 +599,7 @@ as begin
 	select @EmployeeCount = count(Id) from Employees where Gender = @Gender
 end
 
+--- запуск
 -- annab teada, palju on meessoost isikuid ning kuvab vastava stringi
 declare @TotalCount int
 exec spGetEmployeeCountByGender 'Female', @TotalCount out
