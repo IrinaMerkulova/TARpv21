@@ -125,7 +125,7 @@ Age = 67 or Age = 24
 select * from Person where Age in (100, 67, 24)
 
 ---4. näitab teatud vanusevahemikus olevaid inimesi
-select * from Person where Age between 30 and 50
+select * from Person where Age between 30 and 60
 
 ---5. wildcard e näitab kõik g-tähega linnad
 select * from Person where City like 'n%'
@@ -141,11 +141,11 @@ select * from Person where Email like '_@_.com'
 ---8. kõik, kellel ei ole nimes esimene täht W, A ja S
 select * from Person where Name like '[^WAS]%'
 
----9. kes elavad Gothamis ja New Yorkis
-select * from Person where (City = 'Gotham' or City = 'New York')
+---9. kes elavad Tallinnas ja Maardus
+select * from Person where (City = 'Tallinn' or City = 'Maardu')
 
 ---10. kõik, kes elevad välja toodud linnades ja on vanemad kui 40 a
-select * from Person where (City = 'Gotham' or City = 'New York')
+select * from Person where (City = 'Tallinn' or City = 'Maardu')
 and Age >= 40
 
 --11. kuvab tähestikulises järjekorras inimesi ja võtab aluseks Name veeru
@@ -163,11 +163,11 @@ select top 3 Age, Name from Person
 ---15. näitab esimesed 50% tabelis
 select top 50 percent * from Person
 
---16. järjestab vanuse järgi isikud
+--17. järjestab vanuse järgi isikud
 select * from Person order by cast(Age as int)
 select * from Person order by Age
 
---17. kõikide isikute koondvanus
+--16. kõikide isikute koondvanus
 select sum(cast(Age as int)) from Person
 
 ---18. kuvab kõige nooremat isikut
@@ -175,24 +175,24 @@ select min(cast(Age as int)) from Person
 --- kõige vanem isik
 select max(cast(Age as int)) from Person
 
-select City, sum(cast(Age as int)) as TotalAge from Person group by City
+19. select City, sum(cast(Age as int)) as TotalAge from Person group by City
 
----19. kuidas saab koodiga muuta andmetüüpi ja selle pikkust
+---20. kuidas saab koodiga muuta andmetüüpi ja selle pikkust
 alter table Person
 alter column Name nvarchar(30)
 
---20. kuvab esimeses reas välja toodud järjestuses 
+--21. kuvab esimeses reas välja toodud järjestuses 
 -- ning muudab Age-i TotalAges-ks
 -- järjestab City-s olevate nimede järgi ning alles siis GenderId järgi
 -- отображает суммарный	возраст в каждом городе и упорядочивает по GenderId
 select City, GenderId, Sum(cast(Age as int)) as TotalAge from Person
 group by City, GenderId order by City
 
----21. näitab, et mitu rida on selles tabelis
+---22. näitab, et mitu rida on selles tabelis
 ---покажет сколько рядов / строк / записей в таблице
 select count(*) from Person
 
----22. näitab tulemust, et mitu inimest on GenderId väärtusega 2 konkreetses linnas
+---23. näitab tulemust, et mitu inimest on GenderId väärtusega 2 konkreetses linnas
 --- arvutab vanuse kokku konkreetses linnas
 ---покажет результат, сколько человек с GenderId=2 в конкретном городе и найдет их суммарный возраст
 select GenderId, City, sum(cast(Age as int)) as TotalAge, count(Id) as [Total Person(s)]
@@ -202,7 +202,7 @@ group by GenderId, City
 
 --- tund 3
 
---- n'itab 'ra, et mitu inimest on vanemad, kui 41 ja kui palju igas linnas neid elab
+--- näitab ära, et mitu inimest on vanemad, kui 41 ja kui palju igas linnas neid elab
 select GenderId, City, sum(cast(Age as int)) as TotalAge, count(Id) as [Total Person(s)]
 from Person
 group by GenderId, City having sum(cast(Age as int)) > 15
@@ -210,7 +210,7 @@ group by GenderId, City having sum(cast(Age as int)) > 15
 --- loome uued tabelid
 create table Department
 (
-Id int primary key,
+Id int primary key identity(1,1),
 DepartmentName nvarchar(50),
 Location nvarchar(50),
 DepartmentHead nvarchar(50)
@@ -218,12 +218,13 @@ DepartmentHead nvarchar(50)
 
 create table Employees
 (
-Id int primary key,
+Id int primary key identity(1,1),
 Name nvarchar(50),
 Gender nvarchar(10),
 Salary nvarchar(50),
 DepartmentId int
 )
+*2 tabelid - Employees / Department on loodud
 
 ---sisestame andmed
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
