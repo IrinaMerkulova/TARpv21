@@ -1,20 +1,23 @@
 ﻿ülesanded tegi Edgar Neverovski
 -- db loomine
-create database Tarpe21
+create database Tarpv21
+*andmebaas on loodud
 
 -- db kustutamine
-DRop DataBASE Tarpe21
+DRop DataBASE Tarpv21
 
---- teeme tabeli
+--- teeme tabeli nimega sugu-gender
+use Tarpv21;
 create table Gender
 (
-Id int NOT NULL primary key,
+Id int NOT NULL primary key identity(1,1),
 Gender nvarchar(10) not null
 )
+*tabel gender on loodud
 
 create table Person
 (
-Id int not null primary key,
+Id int not null primary key identity(1,1),
 Name nvarchar(25),
 Email nvarchar(30),
 GenderId int
