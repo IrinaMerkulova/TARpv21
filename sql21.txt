@@ -72,6 +72,8 @@ values (3, 'Unknown')
 alter table Person
 add constraint DF_Person_GenderId
 default 3 for GenderId
+*foreign key kustatamine ja uuesti lisamine
+
 
 
 ---- 2 tund
