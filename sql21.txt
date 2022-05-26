@@ -105,6 +105,7 @@ go
 delete from Person where Id = 8
 go
 select * from Person
+*8.rida on kutsutatud
 
 --- lisame veeru juurde
 alter table Person
