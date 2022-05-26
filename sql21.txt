@@ -1,3 +1,4 @@
+﻿ülesanded tegi Artjom Volkov
 -- db loomine
 create database Tarpe21
 
