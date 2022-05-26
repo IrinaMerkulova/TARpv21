@@ -276,7 +276,6 @@ insert into Employees (Name, Gender, Salary, DepartmentId)
 values ('Russell', 'Male', 8800, NULL)
 
 select * from Employees
-*Andmed tabeli person on lisatud
 
 --- saan ainult selles tabelis olevad veerud
 select distinct Name, DepartmentId from Employees
@@ -350,7 +349,7 @@ int null
 
 --- inner join
 --- kuvab neid, kellel on DepartmentName all olemas v��rtus
---- kokku on andmeid 10 rida, aga n�itas kaheksa
+--- kokku on andmeid 10 rida, aga näitas kaheksa
 select Name, Gender, Salary
 from Employees
 inner join Department
@@ -498,7 +497,7 @@ update Employees set FirstName = 'James', MiddleName = '007', LastName = 'Bond'
 where Id = 9
 update Employees set FirstName = NULL, MiddleName = NULL, LastName = 'Crowe'
 where Id = 10
-
+*lisatud veerud = lastname ja middlename ning täidetud ka.
 
 --- igast reast v�tab esimeses veerus t�idetud lahtri ja kuvab ainult seda
 select Id, coalesce(FirstName, MiddleName, LastName) as Name
