@@ -149,8 +149,9 @@ select * from Person where (City = 'Tallinn' or City = 'Narva')
 *select 9 on tehtud
 
 --- 10.kõik, kes elevad välja toodud linnades ja on vanemad kui 40 a
-select * from Person where (City = 'Gotham' or City = 'New York')
+select * from Person where (City = 'Tallinn' or City = 'Narva')
 and Age >= 40
+*select 10 on tehtud
 
 -- 11.kuvab tähestikulises järjekorras inimesi ja võtab aluseks Name veeru
 select * from Person order by Name
