@@ -556,7 +556,8 @@ union all
 select Id, Name, Email from UKCustomers
 order by Name
 
---- loome stored procedure, mis kuvab vaate
+PROCEDUURID
+--- loome stored procedure, mis kuvab vaate - kaks veergu :FirstName, Gender
 create procedure spGetEmployees
 as begin
 	select FirstName, Gender from Employees
