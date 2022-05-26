@@ -145,12 +145,14 @@ select * from Person where Email like '_@_.com'
 select * from Person where Name like '[^WAS]%'
 *Select 8 on tehtud
 
---- 9. kes elavad Gothamis ja New Yorkis
-select * from Person where (City = 'Gotham' or City = 'New York')
+--- 9. kes elavad Gothamis ja Los Angeles
+select * from Person where (City = 'Gotham' or City = 'Los Angeles')
+*Select 9 on tehtud
 
---- 10. k�ik, kes elevad v�lja toodud linnades ja on vanemad kui 40 a
-select * from Person where (City = 'Gotham' or City = 'New York')
+--- 10. kõik, kes elevad välja toodud linnades ja on vanemad kui 40 a
+select * from Person where (City = 'Gotham' or City = 'Los Angeles')
 and Age >= 40
+*Select 10 on tehtud
 
 -- 11. kuvab t�hestikulises j�rjekorras inimesi ja v�tab aluseks Name veeru
 select * from Person order by Name
