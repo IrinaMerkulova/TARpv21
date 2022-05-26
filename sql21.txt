@@ -107,33 +107,34 @@ go
 select * from Person
 *8.rida on kutsutatud
 
---- lisame veeru juurde
+--- lisame veeru City juurde
 alter table Person
 add City nvarchar(25)
 
--- tahame tead k�iki, kes elavad Gothami linnas 
+-- 1. tahame tead kõiki, kes elavad Gothami linnas 
 select * from Person where City = 'Gotham'
--- k�ik, kes ei ela Gothamis
+-- 2. kõik, kes ei ela Gothamis
 select * from Person where City <> 'Gotham'
 select * from Person where City != 'Gotham'
+*select 1-2 on tehtud
 
--- n�itab teatud vanusega inimesi
+-- näitab teatud vanusega inimesi
 select *from Person where Age = 100 or 
 Age = 50 or Age = 20
 select * from Person where Age in (100, 50, 20)
 
---- n�itab teatud vanusevahemikus olevaid inimesi
+--- näitab teatud vanusevahemikus olevaid inimesi
 select * from Person where Age between 30 and 50
 
---- wildcard e n�itab k�ik g-t�hega linnad
+--- wildcard e näitab kõik g-tähega linnad
 select * from Person where City like 'n%'
 select * from Person where Email like '%@%'
 
--- n'itab k�iki, kellel ei ole @-m�rki emailis
+-- n'itab kõiki, kellel ei ole @-märki emailis
 select * from Person where Email not like '%@%'
 
---- n�itab, kelle on emailis ees ja peale @-m�rki
--- ainult �ks t�ht
+--- näitab, kelle on emailis ees ja peale @-m�rki
+-- ainult üks täht
 select * from Person where Email like '_@_.com'
 
 --- k�ik, kellel ei ole nimes esimene t�ht W, A ja S
