@@ -484,7 +484,8 @@ update Employees set FirstName = NULL, MiddleName = NULL, LastName = 'Crowe'
 where Id = 10
 *lisatud veerud - LastName ja MiddleName ning täidetud ka
 
---- igast reast v�tab esimeses veerus t�idetud lahtri ja kuvab ainult seda
+*coalesce - функция, которая возвращает ненулевое значение первого FirstName столбца 
+--- igast reast võtab esimeses veerus täidetud lahtri ja kuvab ainult seda
 select Id, coalesce(FirstName, MiddleName, LastName) as Name
 from Employees
 
@@ -531,6 +532,7 @@ select Id, Name, Email from IndianCustomers
 union all
 select Id, Name, Email from UKCustomers
 order by Name
+
 
 --- loome stored procedure, mis kuvab vaate
 create procedure spGetEmployees
