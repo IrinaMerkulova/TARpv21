@@ -561,7 +561,7 @@ as begin
 	and DepartmentId = @DepartmentId
 end
 
-
+---näitab töötajate summa nende soo järgi
 create proc spGetEmployeeCountByGender
 @Gender nvarchar(20),
 @EmployeeCount int output
@@ -577,19 +577,20 @@ if(@TotalCount = 0)
 else
 	print '@TotalCount is not null'
 print @TotalCount
+*protseduur 3 on tehtud
 
 -- annab teada, palju on meessoost isikuid
 declare @TotalCount int
 exec spGetEmployeeCountByGender @EmployeeCount = @TotalCount out, @Gender = 'Male'
 print @TotalCount
 
---- sp s�ltuvuse vaatamine
+--- sp sõltuvuse vaatamine
 sp_depends spGetEmployeeCountByGender
 --- sp sisu vaatamine
 sp_help spGetEmployeeCountByGender
 --- tabeli sisu
 sp_help Employees
---- kui soovid sp teksti n�ha
+--- kui soovid sp teksti näha
 sp_helptext spGetEmployeeCountByGender
 
 sp_depends Employees
@@ -601,12 +602,12 @@ create proc spTotalCount2
 as begin
 	select @TotalCount = count(Id) from Employees
 end
---- k�ivitame sp
+--- käivitame sp
 declare @TotalEmployees int
 execute spTotalCount2 @TotalEmployees output
 select @TotalEmployees
 
---- mis id all on keegi nime j�rgi
+--- mis id all on keegi nime järgi
 create proc spGetNameById1
 @Id int,
 @FirstName nvarchar(50) output
@@ -614,7 +615,7 @@ as begin
 	select @FirstName = FirstName from employees where Id = @Id
 end
 
---- k�ivitame sp
+--- käivitame sp
 declare @FirstName nvarchar(50)
 execute spGetNameById1 6, @FirstName output
 print 'Name of the employee = ' + @FirstName
@@ -625,7 +626,7 @@ create proc spGetNameById2
 as begin
 	return (select FirstName from Employees where Id = @Id)
 end
--- tuleb veatead kuna kutsusime v�lja int-i, aga Tom on string
+-- tuleb veatead kuna kutsusime välja int-i, aga Tom on string
 declare @EmployeeName nvarchar(50)
 exec @EmployeeName = spGetNameById2 1
 print 'Name of the employee = ' + @EmployeeName
@@ -633,13 +634,13 @@ print 'Name of the employee = ' + @EmployeeName
 select * from Employees
 
 
----- sisseehitatud s�ne funktsioonid
--- konverteerib ascii t�he v��rtuse nr
+---- sisseehitatud sõne funktsioonid
+-- konverteerib ascii tähe väärtuse nr
 select ascii('a')
 -- kuvab suure A
 select char (65
 
--- kuvab k�ik t�hem�rgid
+-- kuvab kõik tähemärgid
 declare @Start int
 set @Start = 1
 while (@Start <= 256)
