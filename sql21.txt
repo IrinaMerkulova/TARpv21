@@ -67,18 +67,19 @@ select * from Person
 
 *andmed tabeli person on lisatud
 
---- v��rv�tme piirangu maha v�tmine
+--- väärvõtme piirangu maha võtmine
 alter table Person
 drop constraint tblPerson_GenderId_FK
 
--- sisestame v��rtuse tabelisse
+-- sisestame väärtuse tabelisse
 insert into Gender (Id, Gender)
 values (3, 'Unknown')
--- lisame v��rv�tme uuesti
+-- lisame väärvõtme uuesti
 alter table Person
 add constraint DF_Person_GenderId
 default 3 for GenderId
 
+*foreign key kustutamine ja uuesti lisamine
 
 ---- 2 tund
 
