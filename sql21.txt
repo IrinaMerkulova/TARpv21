@@ -100,12 +100,14 @@ insert into Person (Name, Email, GenderId, Age)
 values ('Test2', 'Test2', 2, 160)
 
 **check piirang on lisatud
+
 --rea kustutamine
 select * from Person
 go
 delete from Person where Id = 8
 go
 select * from Person
+** 8.rida on kustutatud
 
 --- lisame veeru juurde
 alter table Person
