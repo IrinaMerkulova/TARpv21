@@ -1,9 +1,9 @@
 ﻿ülesanded tegi Mark Larionov
 -- db loomine
-create database Tarpe21
-
+create database Tarpv21
+*andmebaas on loodud
 -- db kustutamine
-DRop DataBASE Tarpe21
+DRop DataBASE Tarpv21
 
 --- teeme tabeli
 create table Gender
