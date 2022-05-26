@@ -152,9 +152,11 @@ select * from Person where Email not like '%@%'
 
 *selct 6 on tehtud 
 
----7. näitab, kelle on emailis ees ja peale @-m�rki
+---7. näitab, kelle on emailis ees ja peale @-märki
 -- ainult üks täht
 select * from Person where Email like '_@_.com'
+
+*selct 7 on tehtud
 
 ---8. kõik, kellel ei ole nimes esimene täht W, A ja S
 select * from Person where Name like '[^WAS]%'
