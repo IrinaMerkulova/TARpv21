@@ -208,16 +208,22 @@ select sum(cast(Age as int)) from Person
 
 *select 16 on tehtud 
 
----17. kuvab k�ige nooremat isikut
+---17. kuvab kõige nooremat isikut
 select min(cast(Age as int)) from Person
----18. k�ige vanem isik
-select max(cast(Age as int)) from Person
 
+*Select 17 on tehtud
+
+---18. kõige vanem isik
+select max(cast(Age as int)) from Person
 select City, sum(cast(Age as int)) as TotalAge from Person group by City
+
+*select 18 on tehtud 
 
 ---19. kuidas saab koodiga muuta andmet��pi ja selle pikkust
 alter table Person
 alter column Name nvarchar(30)
+
+*Select 19 on tehtud
 
 -- 20. kuvab esimeses reas välja toodud järjestuses 
 -- ning muudab Age-i TotalAges-ks
@@ -225,6 +231,8 @@ alter column Name nvarchar(30)
 -- Отображает суммарный возраст в каждом городе и упорядочивает по GenderId
 select City, GenderId, Sum(cast(Age as int)) as TotalAge from Person
 group by City, GenderId order by City
+
+*Select 20 on tehtud
 
 ---21 näitab, et mitu rida on selles tabelis
 --- покажет сколько рядов или  записей	 в таблице 
