@@ -234,7 +234,7 @@ group by GenderId, City
 
 --- tund 3
 
---- n'itab 'ra, et mitu inimest on vanemad, kui 41 ja kui palju igas linnas neid elab
+--- näitab ära, et mitu inimest on vanemad, kui 41 ja kui palju igas linnas neid elab
 select GenderId, City, sum(cast(Age as int)) as TotalAge, count(Id) as [Total Person(s)]
 from Person
 group by GenderId, City having sum(cast(Age as int)) > 15
@@ -242,7 +242,7 @@ group by GenderId, City having sum(cast(Age as int)) > 15
 --- loome uued tabelid
 create table Department
 (
-Id int primary key,
+Id int primary key identity(1,1),
 DepartmentName nvarchar(50),
 Location nvarchar(50),
 DepartmentHead nvarchar(50)
@@ -250,12 +250,14 @@ DepartmentHead nvarchar(50)
 
 create table Employees
 (
-Id int primary key,
+Id int primary key identity(1,1),
 Name nvarchar(50),
 Gender nvarchar(10),
 Salary nvarchar(50),
 DepartmentId int
 )
+
+* 2 tabelit - Employees / Department on loodud
 
 ---sisestame andmed
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
