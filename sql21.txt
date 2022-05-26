@@ -767,7 +767,7 @@ select FirstName, LastName, Email,
 	stuff(Email, 2, 3, '*****') as StuffedEmail
 from Employees
 
-
+*DATETIME
 --- datetime
 create table DateTime
 (
@@ -778,6 +778,7 @@ c_datetime datetime,
 c_datetime2 datetime2,
 c_datetimeoffset datetimeoffset
 )
+*tabel DateTime on loodud
 
 select * from DateTime
 
