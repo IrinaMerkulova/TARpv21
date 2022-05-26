@@ -499,7 +499,7 @@ update Employees set FirstName = NULL, MiddleName = NULL, LastName = 'Crowe'
 where Id = 10
 *lisatud veerud = lastname ja middlename ning täidetud ka.
 
---- igast reast v�tab esimeses veerus t�idetud lahtri ja kuvab ainult seda
+--- igast reast võtab esimeses veerus täidetud lahtri ja kuvab ainult seda --функция, которая возвращает не 0 значение первого столбца
 select Id, coalesce(FirstName, MiddleName, LastName) as Name
 from Employees
 
