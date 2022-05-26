@@ -115,11 +115,12 @@ select * from Person
 alter table Person
 add City nvarchar(25)
 
--- tahame tead k�iki, kes elavad Gothami linnas 
-select * from Person where City = 'Gotham'
--- k�ik, kes ei ela Gothamis
-select * from Person where City <> 'Gotham'
-select * from Person where City != 'Gotham'
+-- tahame tead k�iki, kes elavad Novosibirsk linnas 
+select * from Person where City = 'Novosibirsk'
+-- k�ik, kes ei ela Novosibirskis
+select * from Person where City <> 'Novosibirsk'
+select * from Person where City != 'Novosibirsk'
+*select 1-2 on tehtud
 
 -- n�itab teatud vanusega inimesi
 select *from Person where Age = 100 or 
