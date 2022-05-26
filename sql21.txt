@@ -25,10 +25,12 @@ GenderId int
 *tabeli person on loomine
 
 --- andmete sisestamine tabelisse
-insert into Gender (Id, Gender)
+insert into Gender (id, Gender)
 values (1, 'Female')
-insert into Gender (Id, Gender)
+insert into Gender (id, Gender)
 values (2, 'Male')
+select * from Gender
+*tabel gender andmed on lisatud
 
 --- n��d saab kasutada ainult Gender tabelis olevaid v��rtuseid
 alter table Person add constraint tblPerson_GenderId_FK
