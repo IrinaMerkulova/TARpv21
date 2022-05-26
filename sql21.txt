@@ -108,17 +108,20 @@ go
 select * from Person
 *8.rida on kustutatud
 
---- lisame veeru juurde
+--- lisame veeru City juurde
 alter table Person
 add City nvarchar(25)
 
--- tahame tead k�iki, kes elavad Gothami linnas 
-select * from Person where City = 'Gotham'
--- k�ik, kes ei ela Gothamis
-select * from Person where City <> 'Gotham'
-select * from Person where City != 'Gotham'
+---Numerdatud Select laused
 
--- n�itab teatud vanusega inimesi
+-- 1. tahame teada kõiki, kes elavad Tallinnas 
+select * from Person where City = 'Tallinn'
+-- 2. kõik, kes ei ela Tallinnas
+select * from Person where City <> 'Tallinn'
+select * from Person where City != 'Tallinn'
+* select 1-2 on tehtud
+
+-- näitab teatud vanusega inimesi
 select *from Person where Age = 100 or 
 Age = 50 or Age = 20
 select * from Person where Age in (100, 50, 20)
