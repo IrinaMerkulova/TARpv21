@@ -216,6 +216,8 @@ alter column Name nvarchar(30)
 select City, GenderId, Sum(cast(Age as int)) as TotalAge from Person
 group by City, GenderId order by City
 
+*select 19-20 on tehtud
+
 --- 21. näitab, et mitu rida on selles tabelis
 --- показывает сколько рядов в таблице.
 select count(*) from Person
