@@ -797,7 +797,7 @@ select FirstName, LastName, Email,
 	stuff(Email, 2, 3, '*****') as StuffedEmail
 from Employees
 
-
+*DATETIME*
 --- datetime
 create table DateTime
 (
@@ -811,8 +811,12 @@ c_datetimeoffset datetimeoffset
 
 select * from DateTime
 
+* tabeli loomine
+
 -- konkreetse masina kellaaeg
 select getdate(), 'GETDATE()'
+
+* naitame konkreetse masina kellaaeg
 
 insert into DateTime
 values (getdate(), getdate(), getdate(), getdate(), getdate(), getdate())
