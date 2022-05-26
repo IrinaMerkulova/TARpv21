@@ -195,15 +195,18 @@ select City, sum(cast(Age as int)) as TotalAge from Person group by City
 --- 19. kuidas saab koodiga muuta andmetüüpi ja selle pikkust
 alter table Person
 alter column Name nvarchar(30)
+*Select 19 on tehtud
 
 -- 20. kuvab esimeses reas välja toodud järjestuses - отображает суммарный возраст в каждом городе и сортирует по GenderId
 -- ning muudab Age-i TotalAges-ks
 -- järjestab City-s olevate nimede järgi ning alles siis GenderId järgi
 select City, GenderId, Sum(cast(Age as int)) as TotalAge from Person
 group by City, GenderId order by City
+*Select 20 on tehtud
 
 --- 21. näitab, et mitu rida on selles tabelis - покажет сколько строк/записей в таблице
 select count(*) from Person
+*Select 21 on tehtud
 
 --- 22. näitab tulemust, et mitu inimest on GenderId väärtusega 2 konkreetses linnas - сколько человек с GenderId = 2 в конкретном городе
 --- arvutab vanuse kokku konkreetses linnas - и найдет суммарный возраст
@@ -211,6 +214,7 @@ select GenderId, City, sum(cast(Age as int)) as TotalAge, count(Id) as [Total Pe
 from Person
 where GenderId = '2'
 group by GenderId, City
+*Select 22 on tehtud
 
 --- tund 3
 
@@ -237,40 +241,42 @@ Salary nvarchar(50),
 DepartmentId int
 )
 *kaks tabelid - Employees / Department on loodud
+
 ---sisestame andmed
-insert into Department (Id, DepartmentName, Location, DepartmentHead)
-values (1, 'IT', 'London', 'Rick')
-insert into Department (Id, DepartmentName, Location, DepartmentHead)
-values (2, 'Payroll', 'Delhi', 'Ron')
-insert into Department (Id, DepartmentName, Location, DepartmentHead)
-values (3, 'HR', 'New York', 'Christie')
-insert into Department (Id, DepartmentName, Location, DepartmentHead)
-values (4, 'Other Deparment', 'Sydney', 'Cindrella')
+insert into Department (DepartmentName, Location, DepartmentHead)
+values ('IT', 'London', 'Rick')
+insert into Department (DepartmentName, Location, DepartmentHead)
+values ('Payroll', 'Delhi', 'Ron')
+insert into Department (DepartmentName, Location, DepartmentHead)
+values ('HR', 'New York', 'Christie')
+insert into Department (DepartmentName, Location, DepartmentHead)
+values ('Other Deparment', 'Sydney', 'Cindrella')
 
 select * from Department
 
-insert into Employees (Id, Name, Gender, Salary, DepartmentId)
-values (1, 'Tom', 'Male', 4000, 1)
-insert into Employees (Id, Name, Gender, Salary, DepartmentId)
-values (2, 'Pam', 'Female', 3000, 1)
-insert into Employees (Id, Name, Gender, Salary, DepartmentId)
-values (3, 'John', 'Male', 3500, 1)
-insert into Employees (Id, Name, Gender, Salary, DepartmentId)
-values (4, 'Sam', 'Male', 4500, 2)
-insert into Employees (Id, Name, Gender, Salary, DepartmentId)
-values (5, 'Todd', 'Male', 2800, 1)
-insert into Employees (Id, Name, Gender, Salary, DepartmentId)
-values (6, 'Ben', 'Male', 7000, 1)
-insert into Employees (Id, Name, Gender, Salary, DepartmentId)
-values (7, 'Sara', 'Female', 4800, 3)
-insert into Employees (Id, Name, Gender, Salary, DepartmentId)
-values (8, 'Valarie', 'Female', 5500, 1)
-insert into Employees (Id, Name, Gender, Salary, DepartmentId)
-values (9, 'James', 'Male', 6500, NULL)
-insert into Employees (Id, Name, Gender, Salary, DepartmentId)
-values (10, 'Russell', 'Male', 8800, NULL)
+insert into Employees (Name, Gender, Salary, DepartmentId)
+values ('Tom', 'Male', 4000, 1)
+insert into Employees (Name, Gender, Salary, DepartmentId)
+values ('Pam', 'Female', 3000, 1)
+insert into Employees (Name, Gender, Salary, DepartmentId)
+values ('John', 'Male', 3500, 1)
+insert into Employees (Name, Gender, Salary, DepartmentId)
+values ('Sam', 'Male', 4500, 2)
+insert into Employees (Name, Gender, Salary, DepartmentId)
+values ('Todd', 'Male', 2800, 1)
+insert into Employees (Name, Gender, Salary, DepartmentId)
+values ('Ben', 'Male', 7000, 1)
+insert into Employees (Name, Gender, Salary, DepartmentId)
+values ('Sara', 'Female', 4800, 3)
+insert into Employees (Name, Gender, Salary, DepartmentId)
+values ('Valarie', 'Female', 5500, 1)
+insert into Employees (Name, Gender, Salary, DepartmentId)
+values ('James', 'Male', 6500, NULL)
+insert into Employees (Name, Gender, Salary, DepartmentId)
+values ('Russell', 'Male', 8800, NULL)
 
 select * from Employees
+*Andmed tabeli person on lisatud
 
 --- saan ainult selles tabelis olevad veerud
 select distinct Name, DepartmentId from Employees
