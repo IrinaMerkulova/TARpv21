@@ -170,16 +170,22 @@ select * from Person where (City = 'Tallinn' or City = 'New-York')
 *select 9 on tehtud 
 
 ---10. kõik, kes elevad välja toodud linnades ja on vanemad kui 40 a
-select * from Person where (City = 'Gotham' or City = 'New York')
+select * from Person where (City = 'Tallinn' or City = 'New-York')
 and Age >= 40
 
---11. kuvab t�hestikulises j�rjekorras inimesi ja v�tab aluseks Name veeru
+*select 10 on tehtud
+
+--11. kuvab tähestikulises järjekorras inimesi ja võtab aluseks Name veeru
 select * from Person order by Name
---- kuva vastupidises j�rjestuses
+--- kuva vastupidises järjestuses
 select * from Person order by Name desc
 
----12.v�tab kolm esimest rida
+*select 11 on tehtud 
+
+---12.võtab kolm esimest rida
 select top 3 * from Person
+
+*select 12 on tehtud
 
 ---13. kolm esimest, aga tabeli j�rjestus on Age ja siis Name
 select * from Person
