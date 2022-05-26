@@ -170,11 +170,13 @@ select top 50 percent * from Person
 select * from Person order by cast(Age as int)
 select * from Person order by Age
 select laused 15-16 on tehtud 
+
 --17 kõikide isikute koondvanus
 select sum(cast(Age as int)) from Person
 
 ---18 kuvab kõige nooremat isikut
 select min(cast(Age as int)) from Person
+select laused 17-18 on tehtud 
 ---19. kõige vanem isik
 select max(cast(Age as int)) from Person
 
