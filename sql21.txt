@@ -507,6 +507,7 @@ where Id = 10
 
 *lisatud veerud  LastName ja middleName ning
 
+*coalesce - функция которая возвращает не 0 значение первого столбца
 --- igast reast v�tab esimeses veerus t�idetud lahtri ja kuvab ainult seda
 select Id, coalesce(FirstName, MiddleName, LastName) as Name
 from Employees
