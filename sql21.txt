@@ -29,29 +29,31 @@ values ('Female')
 insert into Gender (Gender)
 values ('Male')
 *data added in tabel Gender
+
 --- nüüd saab kasutada ainult Gender tabelis olevaid väärtuseid
 ---foreign key addition
 alter table Person add constraint tblPerson_GenderId_FK
 foreign key (GenderId) references Gender(Id)
 *foreign key added on table peson
--- sisestame andmed
-insert into Person (Id, Name, Email, GenderId)
-values (1, 'Supermees', 's@s.com', 2)
-insert into Person (Id, Name, Email, GenderId)
-values (2, 'Wonderwoman', 'w@w.com', 1)
-insert into Person (Id, Name, Email, GenderId)
-values (3, 'Batman', 'b@b.com', 2)
-insert into Person (Id, Name, Email, GenderId)
-values (4, 'Aquaman', 'a@a.com', 2)
-insert into Person (Id, Name, Email, GenderId)
-values (5, 'Catwoman', 'c@c.com', 1)
-insert into Person (Id, Name, Email, GenderId)
-values (6, 'Antman', 'ant"ant.com', 2)
-insert into Person (Id, Name, Email, GenderId)
-values (7, 'Spiderman', 'spider@spiderman.com', 2)
 
--- vaatame tabeli andmeid
+-- sisestame andmed
+insert into Person ( Name, Email, GenderId)
+values ( 'Supermees', 's@s.com', 2)
+insert into Person ( Name, Email, GenderId)
+values ( 'Wonderwoman', 'w@w.com', 1)
+insert into Person ( Name, Email, GenderId)
+values ( 'Batman', 'b@b.com', 2)
+insert into Person ( Name, Email, GenderId)
+values ( 'Aquaman', 'a@a.com', 2)
+insert into Person ( Name, Email, GenderId)
+values ( 'Catwoman', 'c@c.com', 1)
+insert into Person ( Name, Email, GenderId)
+values ( 'Antman', 'ant"ant.com', 2)
+insert into Person ( Name, Email, GenderId)
+values ( 'Spiderman', 'spider@spiderman.com', 2)
 select * from Person
+*data added in table person
+
 
 --- v��rv�tme piirangu maha v�tmine
 alter table Person
