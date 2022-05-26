@@ -1,7 +1,7 @@
 ﻿ülesanded tegi Denis Saiko
 -- db loomine
 create database Tarpe21
-
+*andme baas on loodud
 -- db kustutamine
 DRop DataBASE Tarpe21
 
