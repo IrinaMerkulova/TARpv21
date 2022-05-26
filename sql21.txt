@@ -209,7 +209,7 @@ group by GenderId, City
 
 --- tund 3
 
---- n'itab 'ra, et mitu inimest on vanemad, kui 41 ja kui palju igas linnas neid elab
+--- näitab ära, et mitu inimest on vanemad, kui 41 ja kui palju igas linnas neid elab
 select GenderId, City, sum(cast(Age as int)) as TotalAge, count(Id) as [Total Person(s)]
 from Person
 group by GenderId, City having sum(cast(Age as int)) > 15
@@ -217,7 +217,7 @@ group by GenderId, City having sum(cast(Age as int)) > 15
 --- loome uued tabelid
 create table Department
 (
-Id int primary key,
+Id int primary key identity (1,1),
 DepartmentName nvarchar(50),
 Location nvarchar(50),
 DepartmentHead nvarchar(50)
@@ -225,12 +225,14 @@ DepartmentHead nvarchar(50)
 
 create table Employees
 (
-Id int primary key,
+Id int primary key identity (1,1),
 Name nvarchar(50),
 Gender nvarchar(10),
 Salary nvarchar(50),
 DepartmentId int
 )
+
+**2 tabelid - Employees ja Department on loodud
 
 ---sisestame andmed
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
@@ -338,40 +340,40 @@ int null
 
 
 --- inner join
---- kuvab neid, kellel on DepartmentName all olemas v��rtus
---- kokku on andmeid 10 rida, aga n�itas kaheksa
+--- kuvab neid, kellel on DepartmentName all olemas väärtus
+--- kokku on andmeid 10 rida, aga näitas kaheksa
 select Name, Gender, Salary
 from Employees
 inner join Department
 on Employees.DepartmentId = Department.Id
 
 --- left join
---- kuidas saada k�ik andmed k�tte
+--- kuidas saada kõik andmed kätte
 select Name, Gender, Salary, DepartmentId
 from Employees
 left join Department
 on Employees.DepartmentId = Department.Id
 
 ---
---- kuidas saada Departmenti alla uus t�hi rida
+--- kuidas saada Departmenti alla uus tühi rida
 select Name, Gender, Salary, DepartmentId, DepartmentName
 from Employees
 right join Department
 on Employees.DepartmentId = Department.Id
 
---- kuidas saada k�ikide tabelite v��rtused �hte p�ringusse
+--- kuidas saada kõikide tabelite väärtused ähte päringusse
 select Name, Gender, Salary, DepartmentId, DepartmentName
 from Employees
 full outer join Department
 on Employees.DepartmentId = Department.Id
 
---- cross join v�tab kaks allpool olevat tabelit kokku 
---- ja korrutab need omavahel l�bi
+--- cross join võtab kaks allpool olevat tabelit kokku 
+--- ja korrutab need omavahel läbi
 select Name, Gender, Salary, DepartmentName
 from Employees
 cross join Department
 
---- p�ringu sisu
+--- päringu sisu
 select ColumnList
 from LeftTable
 joinType RightTable
@@ -379,7 +381,7 @@ on JoinCondition
 
 
 --- inner join
---- ridadel, millel v��rtust ei ole, siis neid ei n�ita
+--- ridadel, millel väärtust ei ole, siis neid ei näita
 select Name, Gender, Salary, DepartmentName
 from Employees
 inner join Department
@@ -407,7 +409,7 @@ right join Department
 on Employees.DepartmentId = Department.Id
 where Employees.DepartmentId is null
 
---- m�lema tabeli mitte-kattuvate v��rtustega read kuvab v�lja
+--- mõlema tabeli mitte-kattuvate väärtustega read kuvab välja
 select Name, Gender, Salary, DepartmentName
 from Employees
 full join Department
@@ -419,8 +421,8 @@ or Department.Id is null;
 sp_rename 'Department1' , 'Department'
 
 
---- kasutame Employees tabeli asemel l�hendit E ja M
---- Teeme tabelisisese join-i ja n�ema, kes on kelle �lemus
+--- kasutame Employees tabeli asemel lähendit E ja M
+--- Teeme tabelisisese join-i ja näema, kes on kelle älemus
 select E.Name as Employee, M.Name as Manager
 from Employees E
 left join Employees M
@@ -429,30 +431,30 @@ on E.ManagerId = M.Id
 alter table Employees
 add ManagerId int
 
---- kuvab ainult ManagerId all olevate isikute v��rtuseid
+--- kuvab ainult ManagerId all olevate isikute väärtuseid
 select E.Name as Employee, M.Name as Manager
 from Employees E
 inner join Employees M
 on E.ManagerId = M.Id
 
 
---- k�ik saavad k�ikide �lemused olla
+--- kõik saavad kõikide älemused olla
 select E.Name as asdasdasdasd, M.Name as Manager
 from Employees E
 cross join Employees M
 
---- kuvab No manager kuna NULL asemel ei ole string v��rtust
---- kui panna NULL asemele v��rtuse, siis kuvab seda stringi
+--- kuvab No manager kuna NULL asemel ei ole string väärtust
+--- kui panna NULL asemele väärtuse, siis kuvab seda stringi
 select isnull(NULL, 'No Manager') as Manager
 
---- neil, kellel ei ole �lemust, siis paneb neile No Manager teksti
+--- neil, kellel ei ole älemust, siis paneb neile No Manager teksti
 select E.Name as Employee, isnull(M.Name, 'No Manager') as Manager
 from Employees E
 left join Employees M
 on E.ManagerId = M.Id
 
 
---- case kasutamine p�ringus
+--- case kasutamine päringus
 select E.Name as Employee, case when M.Name is null then 'No Manager'
 else M.Name end as Manager
 from Employees E
@@ -489,7 +491,7 @@ update Employees set FirstName = NULL, MiddleName = NULL, LastName = 'Crowe'
 where Id = 10
 
 
---- igast reast v�tab esimeses veerus t�idetud lahtri ja kuvab ainult seda
+--- igast reast võtab esimeses veerus tõidetud lahtri ja kuvab ainult seda
 select Id, coalesce(FirstName, MiddleName, LastName) as Name
 from Employees
 
@@ -520,18 +522,18 @@ insert into UKCustomers (Name, Email) values ('Sama', 'S@S.com')
 select * from IndianCustomers
 select * from UKCustomers
 
---- kasutame union all, n�itab k�iki ridu
+--- kasutame union all, näitab kõiki ridu
 select Id, Name, Email from IndianCustomers
 union all
 select Id, Name, Email from UKCustomers
 
 
---- korduvate v��rtustega read pannakse �hte ja ei korrata
+--- korduvate väärtustega read pannakse ähte ja ei korrata
 select Id, Name, Email from IndianCustomers
 union
 select Id, Name, Email from UKCustomers
 
---- nimede t�hestikulise j�rjekorra alusel saab j�rjestada
+--- nimede tähestikulise järjekorra alusel saab järjestada
 select Id, Name, Email from IndianCustomers
 union all
 select Id, Name, Email from UKCustomers
