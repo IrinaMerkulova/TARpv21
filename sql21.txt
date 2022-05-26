@@ -57,17 +57,19 @@ values ('Spiderman', 'spider@spiderman.com', 2)
 select * from Person
 *andmed tabeli Person on liisatud
 
---- v��rv�tme piirangu maha v�tmine
+--- võõrvõtme piirangu maha võtmine
 alter table Person
 drop constraint tblPerson_GenderId_FK
 
--- sisestame v��rtuse tabelisse
+-- sisestame võõrtuse tabelisse
 insert into Gender (Id, Gender)
 values (3, 'Unknown')
--- lisame v��rv�tme uuesti
+-- lisame võõrvõtme uuesti
 alter table Person
 add constraint DF_Person_GenderId
 default 3 for GenderId
+
+*foreign key kustatamine ja uuesti lisamine
 
 
 ---- 2 tund
