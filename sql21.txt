@@ -179,6 +179,7 @@ select * from Person order by Age
 
 -- 16kõikide isikute koondvanus
 select sum(cast(Age as int)) from Person
+*select 16 on tehtud
 
 --- 17.kuvab kõige nooremat isikut
 select min(cast(Age as int)) from Person
