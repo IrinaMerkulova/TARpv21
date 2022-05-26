@@ -4,24 +4,23 @@ create database Tarpv21
 *andmebaas on loodud
 
 -- db kustutamine
-DRop DataBASE Tarpv21
+drop DataBASE Tarpv21
 
---- teeme tabeli nimega sugu-gender
+--- teeme tabeli nimega Gender
 use Tarpv21;
-create table Gender
-(
+create table Gender(
 Id int NOT NULL primary key identity(1,1),
-Gender nvarchar(10) not null
-)
-*tabel gender on loodud
+Gender nvarchar(10) not null)
+*tabel Gender on loodud
 
-create table Person
-(
+---tabeli Person loomine
+use Tarpv21;
+create table Person(
 Id int not null primary key identity(1,1),
 Name nvarchar(25),
 Email nvarchar(30),
-GenderId int
-)
+GenderId int)
+*tabel Person on loodud
 
 --- andmete sisestamine tabelisse
 insert into Gender (Id, Gender)
