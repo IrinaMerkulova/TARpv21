@@ -81,13 +81,13 @@ default 3 for GenderId
 
 *foreign key kustutamine ja uuesti lisamine
 
----- 2 tund
+---- 2 tund - select laused
 
 select * from Person
 select * from Gender
 
-insert into Person (Id, Name, Email)
-values (8, 'Test', 'Test')
+insert into Person (Name, Email)
+values ('Test', 'Test')
 
 ---lisame uue veeru tabelisse
 alter table Person
@@ -97,6 +97,8 @@ add Age nvarchar(10)
 update Person
 set Age = 149
 where Id = 8
+
+*uus veerg Age/Vanus on lisatud
 
 -- veerule piirnagu panemine
 alter table Person
