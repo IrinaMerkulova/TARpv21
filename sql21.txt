@@ -786,8 +786,9 @@ c_datetimeoffset datetimeoffset
 select * from DateTime
 *Tabel datetime on loodud
 
--- konkreetse masina kellaaeg
+-- konkreetse masina kellaaeg --показывает время с компьютера 
 select getdate(), 'GETDATE()'
+*Select laused on tehtud
 
 insert into DateTime
 values (getdate(), getdate(), getdate(), getdate(), getdate(), getdate())
