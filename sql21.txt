@@ -763,7 +763,7 @@ select FirstName, LastName, Email,
 	stuff(Email, 2, 3, '*****') as StuffedEmail
 from Employees
 
-
+*DATETIME*
 --- datetime
 create table DateTime
 (
@@ -776,7 +776,7 @@ c_datetimeoffset datetimeoffset
 )
 
 select * from DateTime
-
+-- конкретное время
 -- konkreetse masina kellaaeg
 select getdate(), 'GETDATE()'
 
@@ -786,18 +786,19 @@ values (getdate(), getdate(), getdate(), getdate(), getdate(), getdate())
 update DateTime set c_datetimeoffset = '2022-04-18 13:30:55.8666667 +10:00'
 where c_datetimeoffset = '2022-04-18 13:30:55.8666667 +00:00'
 
-select CURRENT_TIMESTAMP, 'CURRENT_TIMESTAMP' --- aja p�ring
-select SYSDATETIME(), 'SYSDATETIME' --- veel t�psem aja p�ring
-select SYSDATETIMEOFFSET(), 'SYSDATETIMEOFFSET' -- t�pne aeg koos ajalise nihkega UTC suhtes
+select CURRENT_TIMESTAMP, 'CURRENT_TIMESTAMP' --- aja päring
+select SYSDATETIME(), 'SYSDATETIME' --- veel täpsem aja päring
+select SYSDATETIMEOFFSET(), 'SYSDATETIMEOFFSET' -- täpne aeg koos ajalise nihkega UTC suhtes
 select GETUTCDATE(), 'GETUTCDATE' --- UTC aeg
 
+--если 0 то неправильно, если 1 то хорошо
 -- kui 0, siis on vale. Kui 1, siis on OK
 select isdate('asd') --tulemus 0
 select isdate(getdate()) --tulemus 1
 select isdate('2022-04-18 13:30:55.8666667')  -- annab O
-select isdate('2022-04-18 13:30:55.866') -- max sajandiku t�psusega, muid on vastus 0
-select day(getdate()) --- annab t�nase p�eva nr-i
-select day('01/31/2026')  -- tuvastab �ra t�nase kuup�eva
+select isdate('2022-04-18 13:30:55.866') -- max sajandiku täpsusega, muid on vastus 0
+select day(getdate()) --- annab tänase päeva nr-i
+select day('01/31/2026')  -- tuvastab ära tänase kuupäeva
 select month(getdate()) -- annab vastuseks 4 kuna on neljas kuu
 select month('01/31/2026') -- annab ette antud kuu nr
 select year(getdate())  -- annab vastuseks jooksva aasta
