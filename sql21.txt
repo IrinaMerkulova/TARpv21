@@ -13,14 +13,16 @@ Id int NOT NULL primary key identity(1,1),
 Gender nvarchar(10) not null
 )
 *talbe gender created
+
+use Tarpv21
 create table Person
 (
-Id int not null primary key,
+Id int not null primary key identity(1,1),
 Name nvarchar(25),
 Email nvarchar(30),
 GenderId int
 )
-
+*table peson created
 --- andmete sisestamine tabelisse
 insert into Gender (Id, Gender)
 values (1, 'Female')
