@@ -489,7 +489,7 @@ where Id = 10
 
 * lisatud veerud - lastname ja middleName ning täidetud ka.
 
-
+* coalesce -  функция, которая возвращает ненулевое значение первого FirstName столбца
 --- igast reast v�tab esimeses veerus t�idetud lahtri ja kuvab ainult seda
 select Id, coalesce(FirstName, MiddleName, LastName) as Name
 from Employees
