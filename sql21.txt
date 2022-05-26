@@ -802,9 +802,9 @@ select GETUTCDATE(), 'GETUTCDATE' --- UTC aeg
 select isdate('asd') --tulemus 0
 select isdate(getdate()) --tulemus 1
 select isdate('2022-04-18 13:30:55.8666667')  -- annab O
-select isdate('2022-04-18 13:30:55.866') -- max sajandiku t�psusega, muid on vastus 0
-select day(getdate()) --- annab t�nase p�eva nr-i
-select day('01/31/2026')  -- tuvastab �ra t�nase kuup�eva
+select isdate('2022-04-18 13:30:55.866') -- max sajandiku täpsusega, muid on vastus 0
+select day(getdate()) --- annab tänase päeva nr-i
+select day('01/31/2026')  -- tuvastab ära tänase kuupäeva
 select month(getdate()) -- annab vastuseks 4 kuna on neljas kuu
 select month('01/31/2026') -- annab ette antud kuu nr
 select year(getdate())  -- annab vastuseks jooksva aasta
@@ -812,8 +812,9 @@ select year('01/31/2026') -- annab vastuseks 2026
 
 
 select datename(day, '2022-04-18 13:30:55.866') -- annab vastukses 18
-select datename(weekday, '2022-04-18 13:30:55.866')  -- annab vastuseks esmasp�ev
+select datename(weekday, '2022-04-18 13:30:55.866')  -- annab vastuseks esmaspäev
 select datename(month, '2022-04-18 13:30:55.866')  --- annab vastuseks Aprill
+*select date nõuda tehtud
 
 ---
 create table EmployeesWithDates
