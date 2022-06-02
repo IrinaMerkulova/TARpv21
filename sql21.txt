@@ -1,3 +1,4 @@
+﻿ulesanded tegid Aleksejev Aleksandr 
 -- db loomine
 create database Tarpe21
 
