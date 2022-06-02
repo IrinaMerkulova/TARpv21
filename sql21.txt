@@ -71,6 +71,8 @@ alter table Person
 add constraint DF_Person_GenderId
 default 3 for GenderId
 
+*kirje lisamine on preson*
+
 
 ---- 2 tund
 
