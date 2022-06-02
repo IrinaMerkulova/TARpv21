@@ -1,3 +1,3 @@
 --- 15. järjestab vanuse järgi isikud
 select * from Person order by cast(Age as int)
-select * from Person order by Age
+select * from Person order by Age 
