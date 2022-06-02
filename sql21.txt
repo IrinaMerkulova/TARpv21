@@ -274,6 +274,7 @@ select min(cast(Salary as int)) from Employees
 
 alter table Employees
 add City nvarchar(25)
+*kirja on Employees*
 --- naeme linnade kaupa palga kuufondi
 select City, sum(cast(Salary as int)) as TotalSalary from Employees group by City
 --- koondsumma, et kui palju saavad naised ja 
