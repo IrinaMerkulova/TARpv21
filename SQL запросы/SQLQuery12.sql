@@ -1,2 +1,2 @@
 --- 12. võtab kolm esimest rida
-select top 3 * from Person
+select top 3 * from Person 
