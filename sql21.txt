@@ -936,7 +936,7 @@ execute dbo.CalculateAge '10/08/2020'
 
 select * from EmployeesWithDates
 
--- p�ring tabeli vastu, kus kuvatakse inimeste vanust
+-- päring tabeli vastu, kus kuvatakse inimeste vanust
 select Id, Name, dbo.CalculateAge(DateOfBirth) as Age
 from EmployeesWithDates
 where dbo.CalculateAge(DateOfBirth) > 40
@@ -955,14 +955,14 @@ return (select Id, Name, DateOfBirth, DepartmentId, Gender
 		from EmployeesWithDates
 		where Gender = @Gender)
 
---- k�ik female t��tajad tahame
+--- kõik female töötajad tahame
 select * from fn_EmployeesByGender('Female')
 
---- t�psustame otsingut where abil
+--- täpsustame otsingut where abil
 select * from fn_EmployeesByGender('Female')
 where Name = 'Pam'
 
---- kahest erinevast tabelist andmete v�tmine ja koos kuvamine
+--- kahest erinevast tabelist andmete võtmine ja koos kuvamine
 select Name, Gender, DepartmentName
 from fn_EmployeesByGender('Male') E
 join Department D on D.Id = E.DepartmentId
@@ -1328,7 +1328,7 @@ select * from vEmployeesByDepartmentIndex
 -- 1. saab kasutada andmebaasi skeemi keerukuse lihtsustamiseks, mitte IT inimestele
 -- 2. saab kasutada rakendamise mehhanismina rea ja veerutaseme turvalisusena
 
---- view, mis tagastab ainult IT osakonna t��tajad
+--- view, mis tagastab ainult IT osakonna töötajad
 create view vITDepartment_Employees
 as 
 select EmployeeIndex.Id, Name, Salary, Gender, DepartmentName
@@ -1336,10 +1336,10 @@ from EmployeeIndex
 join Department
 on EmployeeIndex.DeptNameId = Department.Id
 where Department.DepartmentName = 'IT'
-
+-- käivitamine
 select * from vITDepartment_Employees
 
---- piirame palga n�gemist kolmandatel isikutel
+--- piirame palga nägemist kolmandatel isikutel
 -- veerru turvalisus e kus j�etakse mingi veerg v�lja
 create view vEmployeesDataExceptSalary
 as
