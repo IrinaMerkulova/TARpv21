@@ -1,0 +1,1 @@
+select City, sum(cast(Salary as int)) as TotalSalary from Employees group by City
