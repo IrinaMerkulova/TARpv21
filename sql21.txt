@@ -11,6 +11,7 @@ create table Gender
 Id int NOT NULL primary key,
 Gender nvarchar(10) not null
 )
+*Table gender on loodud*
 
 create table Person
 (
