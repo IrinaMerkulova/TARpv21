@@ -113,6 +113,7 @@ select * from Person
 --- lisame veeru juurde
 alter table Person
 add City nvarchar(25)
+*kirje lisamine on person*
 
 -- tahame tead k�iki, kes elavad Gothami linnas 
 select * from Person where City = 'Gotham'
