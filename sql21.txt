@@ -945,6 +945,7 @@ set @Age = datediff(year, @DOB, getdate()) -
 		end
 	return @Age
 end
+*procedure CalculateAge on loodud
 
 --- kontrollime, kas funktsioon t��tab
 execute dbo.CalculateAge '10/08/2020'
