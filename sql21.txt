@@ -1368,6 +1368,9 @@ from EmployeeIndex
 join Department
 on EmployeeIndex.DeptNameId = Department.Id
 
+
+* tabeli loomine tehtud
+
 --- loome view, kus kasutame joini
 create view vEmployeesByDepartmentIndex
 as
