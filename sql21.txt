@@ -86,6 +86,7 @@ values (8, 'Test', 'Test')
 ---lisame uue veeru tabelisse
 alter table Person
 add Age nvarchar(10)
+*kirje lisamine on preson*
 
 --uuendame andmeid
 update Person
