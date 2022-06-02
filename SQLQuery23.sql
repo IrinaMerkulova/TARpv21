@@ -1,0 +1,1 @@
+select dbo.fnComputeAge('01/01/1900')
