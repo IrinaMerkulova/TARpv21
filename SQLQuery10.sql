@@ -1,4 +1,4 @@
-
+--Обновляем данные таблицы
 
 update Employees set FirstName = 'Tom', MiddleName = 'Nick', LastName = 'Jones'
 where Id = 1
