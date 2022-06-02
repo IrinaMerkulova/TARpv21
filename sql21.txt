@@ -940,12 +940,12 @@ set @Age = datediff(year, @DOB, getdate()) -
 	return @Age
 end
 
---- kontrollime, kas funktsioon t��tab
+--- kontrollime, kas funktsioon töötab
 execute dbo.CalculateAge '10/08/2020'
 
 select * from EmployeesWithDates
 
--- p�ring tabeli vastu, kus kuvatakse inimeste vanust
+-- päring tabeli vastu, kus kuvatakse inimeste vanust
 select Id, Name, dbo.CalculateAge(DateOfBirth) as Age
 from EmployeesWithDates
 where dbo.CalculateAge(DateOfBirth) > 40
@@ -1333,11 +1333,15 @@ select * from vEmployeesByDepartmentIndex
 -- view on salvestatud virtuaalne tabel
 
 
---- view eelised
+--- view eelised -- преимущества представления
+--- виртуальные таблицы
 -- 1. saab kasutada andmebaasi skeemi keerukuse lihtsustamiseks, mitte IT inimestele
+-- для упрощения работы со сложной схемой БД
 -- 2. saab kasutada rakendamise mehhanismina rea ja veerutaseme turvalisusena
+-- отдельный раздел приложения, более безопасный на уровне строчек и столбцов
 
---- view, mis tagastab ainult IT osakonna t��tajad
+--- view, mis tagastab ainult IT osakonna töötajad
+-- вид, который возвращает только работников ИТ 
 create view vITDepartment_Employees
 as 
 select EmployeeIndex.Id, Name, Salary, Gender, DepartmentName
@@ -1345,11 +1349,12 @@ from EmployeeIndex
 join Department
 on EmployeeIndex.DeptNameId = Department.Id
 where Department.DepartmentName = 'IT'
-
+-- käivitamine (запуск):
 select * from vITDepartment_Employees
 
---- piirame palga n�gemist kolmandatel isikutel
--- veerru turvalisus e kus j�etakse mingi veerg v�lja
+---ограничиваем просмотр зарплаты третьими лицами
+--- piirame palga nägemist kolmandatel isikutel
+-- veerru turvalisus e kus jäetakse mingi veerg välja
 create view vEmployeesDataExceptSalary
 as
 select EmployeeIndex.Id, Name, Gender, DepartmentName
@@ -1357,9 +1362,9 @@ from EmployeeIndex
 join Department
 on EmployeeIndex.DeptNameId = Department.Id
 
-
 select * from vEmployeesDataExceptSalary
 
+--- вид для просмотра сводных данных
 --- view, kus saab kasutada ainult koondandmete n�itamiseks
 -- view, mis tagastab summeeritud andmeid
 create view vEmployeesCountByDepartment
