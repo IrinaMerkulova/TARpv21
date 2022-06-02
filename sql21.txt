@@ -871,6 +871,7 @@ as begin
 			+ cast(@days as nvarchar(2)) + ' Days old '
 		return @Age
 end
+*procedure fnComputeAge on loodud
 
 select dbo.fnComputeAge('01/01/1900')
 
