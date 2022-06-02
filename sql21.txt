@@ -184,6 +184,7 @@ select City, sum(cast(Age as int)) as TotalAge from Person group by City
 --- kuidas saab koodiga muuta andmet��pi ja selle pikkust
 alter table Person
 alter column Name nvarchar(30)
+*kirja on person*
 
 -- kuvab esimeses reas v�lja toodud j�rjestuses 
 -- ning muudab Age-i TotalAges-ks
