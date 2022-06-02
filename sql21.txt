@@ -812,6 +812,7 @@ Id nvarchar(2),
 Name nvarchar(20),
 DateOfBirth datetime
 )
+*tabel Employees on loodud
 
 insert into EmployeesWithDates (Id, Name, DateOfBirth)
 values (1, 'Sam', '1980-12-30 00:00:00.000')
