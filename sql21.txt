@@ -226,6 +226,7 @@ Gender nvarchar(10),
 Salary nvarchar(50),
 DepartmentId int
 )
+*Create department ja emplayees*
 
 ---sisestame andmed
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
