@@ -801,6 +801,7 @@ select datename(weekday, '2022-04-18 13:30:55.866')  -- annab vastuseks esmasp�
 select datename(month, '2022-04-18 13:30:55.866')  --- annab vastuseks Aprill
 
 ---
+-- tabeli loomine
 create table EmployeesWithDates
 (
 Id nvarchar(2),
@@ -1331,11 +1332,15 @@ select * from vEmployeesByDepartmentIndex
 -- view on salvestatud virtuaalne tabel
 
 
---- view eelised
--- 1. saab kasutada andmebaasi skeemi keerukuse lihtsustamiseks, mitte IT inimestele
--- 2. saab kasutada rakendamise mehhanismina rea ja veerutaseme turvalisusena
+--- view selised -- преимущества представления
+---виртуальные таблицы
+-- 1. saab kasutada andmebaasi skeemin keerukuse lihtsustamiseks, mitte IT inimestele
+--Для упрощения работы со сложной БД
+-- 2. saab kasutadarakendamise mehhanismina reaja veerutaseme turvalisusena
+--Отдельный раздел приложения, более безопасный на уровне строчек и столбцов
+--- view, mis tagastab ainult IT osakonna töötajad
+--Вид, который возвращает только ит работникам 
 
---- view, mis tagastab ainult IT osakonna t��tajad
 create view vITDepartment_Employees
 as 
 select EmployeeIndex.Id, Name, Salary, Gender, DepartmentName
@@ -1346,6 +1351,7 @@ where Department.DepartmentName = 'IT'
 
 select * from vITDepartment_Employees
 
+--- ограничиваем просмотр зарплат третьими лицами 
 --- piirame palga n�gemist kolmandatel isikutel
 -- veerru turvalisus e kus j�etakse mingi veerg v�lja
 create view vEmployeesDataExceptSalary
@@ -1358,7 +1364,8 @@ on EmployeeIndex.DeptNameId = Department.Id
 
 select * from vEmployeesDataExceptSalary
 
---- view, kus saab kasutada ainult koondandmete n�itamiseks
+---вид для просмотра сводных данных
+--- view, kus saab kasutada ainult koondandmete näitamiseks
 -- view, mis tagastab summeeritud andmeid
 create view vEmployeesCountByDepartment
 as
