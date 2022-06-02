@@ -1,0 +1,20 @@
+create procedure spGetEmployees
+as begin
+	select FirstName, Gender from Employees
+end
+
+create proc spGetEmployeesByGenderAndDepartment
+@Gender nvarchar(20),
+@DepartmentId int
+@@ -566,7 +567,7 @@ as begin
+	and DepartmentId = @DepartmentId
+end
+
+----------
+käivitamine
+
+spGetEmployees
+exec spGetEmployees
+execute spGetEmployees
+
+spGetEmployeesByGenderAndDepartment 'Male', 1
