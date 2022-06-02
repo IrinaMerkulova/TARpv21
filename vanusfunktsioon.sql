@@ -1,4 +1,5 @@
---Funkstioni k�ivitamine
+﻿--- vanuse arvutamise funktsioon
+--Funkstioni käivitamine
 create function dbo.CalculateAge (@DOB date)
 returns int
 as begin
@@ -14,3 +15,13 @@ set @Age = datediff(year, @DOB, getdate()) -
 		end
 	return @Age
 end
+*tehtud
+--- kontrollime, kas funktsioon t��tab
+execute dbo.CalculateAge '10/08/2020'
+
+
+select * from EmployeesWithDates
+
+select Id, Name, dbo.CalculateAge(DateOfBirth) as Age
+from EmployeesWithDates
+where dbo.CalculateAge(DateOfBirth) > 40
