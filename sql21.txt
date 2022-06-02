@@ -822,6 +822,7 @@ insert into EmployeesWithDates (Id, Name, DateOfBirth)
 values (3, 'John', '1985-08-22 12:03:30.370')
 insert into EmployeesWithDates (Id, Name, DateOfBirth)
 values (4, 'Sara', '1979-11-26 12:59:30.670')
+*kirje lisamine on Employees
 
 select * from EmployeesWithDates
 
