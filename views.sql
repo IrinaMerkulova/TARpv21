@@ -53,4 +53,3 @@ group by DepartmentName
 
 --вызов
 select * from vEmployeesCountByDepartment
-
