@@ -1,2 +1,2 @@
--- имена которые не содержат буквы WAS
+-- имена которые не начинаются буквы WAS
 select * from Person where Name like '[^WAS]%'
