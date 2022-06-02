@@ -60,6 +60,7 @@ select * from Person
 --- v��rv�tme piirangu maha v�tmine
 alter table Person
 drop constraint tblPerson_GenderId_FK
+*drop fk from person*
 
 -- sisestame v��rtuse tabelisse
 insert into Gender (Id, Gender)
