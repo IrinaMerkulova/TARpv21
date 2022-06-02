@@ -1,4 +1,4 @@
---???????--
+--Create table--
 create table EmployeesWithDates
 (
 Id nvarchar(2),
@@ -15,7 +15,7 @@ values (3, 'John', '1985-08-22 12:03:30.370')
 insert into EmployeesWithDates (Id, Name, DateOfBirth)
 values (4, 'Sara', '1979-11-26 12:59:30.670')
 
---???????--
+--Create function--
 create function fnComputeAge(@DOB datetime)
 returns nvarchar(50)
 as begin
@@ -40,5 +40,5 @@ as begin
 		return @Age
 end
 
---??????
+--Use function--
 select dbo.fnComputeAge('01/01/1900')
