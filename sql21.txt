@@ -65,6 +65,7 @@ drop constraint tblPerson_GenderId_FK
 -- sisestame v��rtuse tabelisse
 insert into Gender (Id, Gender)
 values (3, 'Unknown')
+*kirje lisamine on gender*
 -- lisame v��rv�tme uuesti
 alter table Person
 add constraint DF_Person_GenderId
