@@ -1,1 +1,2 @@
+--время
 select getdate(), 'GETDATE()'
