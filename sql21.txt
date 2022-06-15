@@ -513,16 +513,20 @@ order by Name
 ----------Procedurid-------------------------
 
 --- loome stored procedure, mis kuvab vaate - kaks veerg: FirstName, Gender
-create procedure spGetEmployees
+
+create proc spGetEmployees
 as begin
 	select FirstName, Gender from Employees
 end
+
 ---protseduuri käivitamine
+
 spGetEmployees
 exec spGetEmployees
 execute spGetEmployees
 
 ---protseduur, mis näitab FirstName, Gender, DepartmentId kasutaja poolt sisestatud andmetega @Gender, @DepartmentId
+
 create proc spGetEmployeesByGenderAndDepartment
 @Gender nvarchar(20),
 @DepartmentId int
@@ -532,6 +536,8 @@ end
 
 --- kõik esimeses osakonnas meessoost töötavad isikud
 spGetEmployeesByGenderAndDepartment 'Male', 1
+
+
 --- valet j�rjestust ei tohi olla, aga kui soovid, 
 --- siis tuleb muutuja nimetused ette kirjutada
 spGetEmployeesByGenderAndDepartment @DepartmentId =  1, @Gender = 'Male'
