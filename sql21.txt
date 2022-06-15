@@ -510,28 +510,28 @@ union all
 select Id, Name, Email from UKCustomers
 order by Name
 
---- loome stored procedure, mis kuvab vaate
+----------Procedurid-------------------------
+
+--- loome stored procedure, mis kuvab vaate - kaks veerg: FirstName, Gender
 create procedure spGetEmployees
 as begin
 	select FirstName, Gender from Employees
 end
-
+---protseduuri käivitamine
 spGetEmployees
 exec spGetEmployees
 execute spGetEmployees
 
---- 
+---protseduur, mis näitab FirstName, Gender, DepartmentId kasutaja poolt sisestatud andmetega @Gender, @DepartmentId
 create proc spGetEmployeesByGenderAndDepartment
 @Gender nvarchar(20),
 @DepartmentId int
-as begin
-	select FirstName, Gender, DepartmentId from Employees where Gender = @Gender
+	@@ -566,7 +567,7 @@ as begin
 	and DepartmentId = @DepartmentId
 end
 
---- k�ik esimeses osakonnas meessoost t��tavad isikud
+--- kõik esimeses osakonnas meessoost töötavad isikud
 spGetEmployeesByGenderAndDepartment 'Male', 1
-
 --- valet j�rjestust ei tohi olla, aga kui soovid, 
 --- siis tuleb muutuja nimetused ette kirjutada
 spGetEmployeesByGenderAndDepartment @DepartmentId =  1, @Gender = 'Male'
